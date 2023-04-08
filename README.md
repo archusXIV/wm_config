@@ -1,5 +1,5 @@
-# wm_config
-quickly configure i3, bspwm (under construction)
+# wm_config (under construction)
+quickly configure i3, bspwm
 
 
 ```
