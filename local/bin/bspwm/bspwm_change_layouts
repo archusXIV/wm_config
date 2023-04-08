@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Author: Barret E <archus@protonmail.com>
+# github directory: https://github.com/archusXIV/wm_config
+# Youtube channel: <https://www.youtube.com/@linuxinfrench9388>
 # changing workspaces layouts
 # and update the polybar layout module.
 
