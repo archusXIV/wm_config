@@ -18,10 +18,7 @@ done
 # So let's find out which one is running.
 
 WM_NAME=$(awk '/Name/{print $2}' < <(wmctrl -m))
-BARS=( "$WM_NAME"-bar-1 "$WM_NAME"-bar-2 "$WM_NAME"-bar-3 )
 
-for b in "${BARS[@]}"; do
-    polybar "$b" -r & disown
-done
+polybar "$WM_NAME"-bar-1 -r & disown
 
 notify-send 'Bars launched...'
