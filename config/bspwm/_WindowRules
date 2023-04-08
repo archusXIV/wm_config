@@ -1,0 +1,23 @@
+#!/bin/bash
+
+### APPS RULES & ASSIGNMENTS ###
+
+_WindowRules() {
+    # If refreshing bspwmrc, remove all previous rules (added on the fly)
+    # to prevent doubling up.
+    bspc rule -r "*"
+
+    # add windows class names to this file if you want them to float.
+    local FloatingApps="$XDG_CONFIG_HOME/bspwm/FloatingApps"
+
+    while read -r line; do
+        _Rules "$line" state=floating focus=on center=on
+    done < "$FloatingApps"
+
+    # All windows will open on the same desktop.
+    _Rules *:* desktop=^2 follow=on
+
+   # No desktop rules
+    _Rules Five-or-more         follow=on rectangle=434x488+2662+281
+    _Rules URxvt:myplayer_audio rectangle=695x293+2251+243
+}
