@@ -8,29 +8,6 @@ ctrl + alt + {r,q}
     prompt "Do you really want to quit Bspwm ?" "Xexit" \
     }
 
-################### APPLICATIONS ##################
-
-super + Return
-    bspwm_run xterm
-
-# URxvt terminals
-super + u ; {b,c,d,e,f,h,j,m,n,p,r,s,x,y}
-    bspwm_run_urxvt \
-    {\
-    bash,cmus,mpm,mutt,ranger,htop,jnettop,pulsemixer,ncmpcpp, \
-    pacman-cli,newsboat,vim_script,ripper,youtube-viewer \
-    }
-
-# most used gui applications
-super + g ; {e,f,g,p,w}
-    {\
-    bspwm_run lite-xl, \
-    bspwm_run pcmanfm, \
-    bspwm_run geany, \
-    bspwm_run pavucontrol, \
-    bspwm_run Navigator \
-    }
-
 ################# WINDOWS MANAGEMENT ##################
 
 # center term in screens.
