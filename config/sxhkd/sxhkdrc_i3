@@ -1,0 +1,116 @@
+# Defines keymap for sxhkd with i3wm.
+# We have ten workspaces.
+# Reload, restart, quit i3.
+ctrl + alt + {c,r,q}
+    { \
+    i3-msg reload; notify-send 'config reloaded', \
+    restart_wm, \
+    prompt "Do you really want to quit i3 ?" "Xexit" \
+    }
+    
+# Focus the given direction.
+super + {Up,down,Left,Right}
+    { \
+    i3-msg focus up, \
+    i3-msg focus down, \
+    i3-msg focus left || i3-msg focus output left, \
+    i3-msg focus right || i3-msg focus output right \
+    }
+
+# Focus family
+super + shift + {p,x}
+    i3-msg focus {parent,child}
+
+# Focus workspace {1-9,10} or send (focused node) to the given desktop (using numpad).
+super + {_,alt + }{KP_End,KP_Down,KP_Next,KP_Left,KP_Begin,KP_Right,KP_Home,KP_Up,KP_Prior,KP_Insert}
+    i3-msg {workspace,move container to workspace} {1-9,10}
+
+# Switch to next or previous occupied workspace
+super + alt + {Left,Right}
+    i3-msg workspace {prev,next}
+
+# Swap
+super + shift + {Up,down,Left,Right}
+    { \
+    i3-msg move up, \
+    i3-msg move down, \
+    i3-msg move left, \
+    i3-msg move right \
+    }
+
+# Mode swap (between workspaces/outputs)
+super + s
+    i3-msg mark "swapee"; i3-msg mode "swap"
+
+# Mode resize
+super + r
+    i3-msg mode "resize"
+
+# Toggle fullscreen/floating state
+super + alt + {f,s}
+    { \
+    i3-msg fullscreen toggle, \
+    i3-msg floating toggle \
+    }
+
+# Move floating window
+ctrl + {Left,Up,Down,Right}
+    { \
+    i3-msg move left 5px, \
+    i3-msg move up 5px, \
+    i3-msg move down 5px, \
+    i3-msg move right 5px
+    }
+
+# Move floating container in the center of the screen
+super + c
+    i3-msg move position center
+
+# Close/kill current window (like xkill)
+super + {_,alt +,ctrl + }q
+    {\
+    i3-msg kill, \
+    closethemall, \
+    xdo kill \
+    }
+
+# Set splitting area
+super + {v,h}
+    i3-msg split{v,h}; notify-send 'container splited'
+
+## Actions on workspaces
+
+# layout toggle
+alt + Tab
+    i3-msg layout toggle tabbed stacking splitv splith
+
+# switch between the current and the previously focused workspace.
+super + {_,ctrl +}b
+    i3-msg {\
+    workspace back_and_forth, \
+    move container to workspace back_and_forth \
+    }
+
+# Cycle between all occupied workspaces and outputs
+ctrl + alt + {Left,Right}
+    i3-msg workspace {prev,next}
+
+# Move the whole workspace to the next output
+super + ctrl + {Right,Left}
+    i3-msg move workspace to output {right,left}
+
+# Move cursor
+#super + ctrl + m : {_,shift + ,shift + super + }{h,j,k,l}
+#    m={20,100,200} {x=-1 y=0,x=0 y=1,x=0 y=-1,x=1 y=0}; \
+#    xdotool mousemove_relative -- $(( m*x )) $(( m*y ))
+
+# Move cursor to monitor corners
+#super + ctrl + m : super + {h,j,k,l}
+#    xdotool mousemove {$x $y,$x $dy,$dx $y,$dx $dy}
+
+# Simulate mouse button click
+super + ctrl + m : {_,shift + ,ctrl + }space
+    xdotool click {1,3,2}
+
+# vim:ft=sxhkdrc
+
