@@ -1,4 +1,8 @@
 #!/bin/bash
+
+# Author: Barret E <archus@protonmail.com>
+# github directory: https://github.com/archusXIV/wm_config
+# Youtube channel: <https://www.youtube.com/@linuxinfrench9388>
 # Never find yourself on empty desktop
 
 X=$(basename $0)
@@ -16,4 +20,3 @@ bspc subscribe node_remove | \
             || bspc desktop -f last.occupied && bspwm_change_layouts -x
         fi
     done &
-
