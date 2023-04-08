@@ -18,14 +18,13 @@ fi
 
 dbus-update-activation-environment --systemd --all
 systemctl --user import-environment DISPLAY
-#systemctl --user start Xsession.target &
+systemctl --user start Xsession.target &
 
 # These guys are environment variables.
 [ -f "$MODMAP" ] && xmodmap "$MODMAP"
 [ -f "$RESOURCES_FILE" ] && xrdb -load "$RESOURCES_FILE"
 
 # more stuff (+ personal scripts).
-#nvidia-settings -l
 xset s off -dpms
 #xset r rate 350 70
 xset r
