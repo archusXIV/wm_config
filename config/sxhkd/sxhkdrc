@@ -54,20 +54,6 @@ alt + g ; {e,f,g,p,v,w}
 super + k ; {b,d,i,s}
     vim_sxhkdrc -{b,d,i,s}
 
-# script to launch rofi-record, obs/ssr.
-alt + shift + v ; {a,o,v,k}
-    record_options -{a,o,v,k}
-
-[polycontrol]
-# toggle/restart polybar(s)
-ctrl + {_,shift + }{KP_End,KP_Down,KP_Next,KP_Left}
-    polybar_control -{t,r}{1,2,3,a}
-
-[webcam_rectangle]
-# controls the webcam rectangle position on the screen.
-alt + shift + {Left,Down,Up,Right}
-    webcam_rectangle {1435 0,0 715,0 0,1435 715}
-
 [volume/mic]
 {_,alt + }XF86Audio{Lower,Raise}Volume
     volume_control {sink,source} --{down,up}
