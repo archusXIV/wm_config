@@ -1,0 +1,12 @@
+#!/bin/bash
+# close all windows in the present desktop.
+
+xdo id -d | \
+while read wid; do
+    if [[ $(wmctrl -m | awk '/Name:/{print $2}') == dk ]]; then
+        # because dk freezes when using xdo close command
+        dkcmd win "$wid" kill
+    else
+        xdo close "$wid"
+    fi
+done

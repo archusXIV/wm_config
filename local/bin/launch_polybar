@@ -1,0 +1,27 @@
+#!/bin/bash
+
+sockets_dir="$XDG_RUNTIME_DIR/polybar"
+mqueues="/tmp/polybar_mqueue.*"
+
+if [[ -d $sockets_dir ]]; then
+    # Terminate already polybar instances.
+    killall -q --signal SIGKILL {conky,polybar}
+    rm -rf {$mqueues,$sockets_dir} 2>/dev/null
+fi
+
+# Wait until the process has been closed.
+while pgrep -u "$UID" -x polybar; do
+    sleep 0.5
+done
+
+# We have three window managers installed.
+# So let's find out which one is running.
+
+WM_NAME=$(awk '/Name/{print $2}' < <(wmctrl -m))
+BARS=( "$WM_NAME"-bar-1 "$WM_NAME"-bar-2 "$WM_NAME"-bar-3 )
+
+for b in "${BARS[@]}"; do
+    polybar "$b" -r & disown
+done
+
+notify-send 'Bars launched...'

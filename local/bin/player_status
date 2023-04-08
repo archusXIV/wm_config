@@ -1,0 +1,23 @@
+#!/bin/bash
+
+for dep in polybar mpc; do
+    [[ -z $(command -v $i) ]] && {
+        echo missing dependency "$dep"
+        exit 127
+    }
+done
+
+barpid=$(pgrep --full "$(wmctrl -m | awk '/Name/{print $2}')"-bar-2)
+
+_update_mpd_title() {
+    polybar-msg -p ${barpid} action \
+    "#music_player-ipc.hook.1" >/dev/null 2>&1
+}
+
+if [[ $(cmus-remote -Q 2>/dev/null | awk '/status/{print $2}') == 'playing' ]]; then
+    cmus-remote --stop
+    _update_mpd_title
+else
+    _update_mpd_title
+fi
+

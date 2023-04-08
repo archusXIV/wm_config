@@ -1,0 +1,21 @@
+#!/bin/bash
+
+cache="$XDG_CACHE_HOME"
+
+find "$cache" -maxdepth 1 -type f -mtime +5 -exec rm -f {} \;
+find "$cache" -maxdepth 1 -type d -exec rm -rf {} \;
+find "$cache" -maxdepth 2 -type d -empty -exec rmdir {} \;
+find "$cache" -maxdepth 1 -type d -empty -exec rmdir {} \;
+
+[[ -d ~/.fontconfig ]] && rm -rf ~/.fontconfig
+
+find ~/.local/share/xorg/ -type f -mtime +5 -exec rm -f {} \;
+rm -f ~/.local/share/*.xbel
+
+rm -rf ~/.local/share/Trash/{files,info}
+mkdir ~/.local/share/Trash/{files,info}
+
+sed -i '/[[:graph:]]/d' \
+$XDG_CONFIG_HOME/bash/bash_history \
+$XDG_CONFIG_HOME/zsh/.cache/zsh_history
+# same as :'[[:punct:]]/d;/[[:alnum:]]/d'

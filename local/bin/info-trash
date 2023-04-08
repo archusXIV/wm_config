@@ -1,0 +1,13 @@
+#!/bin/sh
+
+info=$(find ~/.local/share/Trash/files/ -mindepth 1 -type f | wc -l)
+
+case "$1" in
+    --clean)
+        rm -rf ~/.local/share/Trash/{files,info}
+        mkdir ~/.local/share/Trash/{files,info}
+        ;;
+    --info)
+        echo "$info"
+        ;;
+esac

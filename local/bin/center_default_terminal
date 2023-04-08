@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# center alacritty in the screen in bspwm.
+
+for tool in xdo xdotool; do
+    [[ -z $(command -v "$tool") ]] && exit 1
+done
+
+id="$(xdotool search --pid "$(pidof "$TERMINAL")")"
+
+monitor1=$(bspc query -M | sed -n '1p')
+monitor2=$(bspc query -M | sed -n '2p')
+monitor3=$(bspc query -M | sed -n '3p')
+
+if [[ $(bspc query -M -m) == "${monitor1}" ]]; then
+    xdo move -x 380 -y 232 "$id"
+elif [[ $(bspc query -M -m) == "${monitor2}" ]]; then
+    xdo move -x 2301 -y 232 "$id"
+elif [[ $(bspc query -M -m) == "${monitor3}" ]]; then
+    xdo move -x 4220 -y 232 "$id"
+fi
+

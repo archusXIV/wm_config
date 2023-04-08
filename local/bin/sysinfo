@@ -1,0 +1,55 @@
+#!/usr/bin/env bash
+###############################################################
+### Anarchy Install Script
+### sysinfo
+###
+### Copyright (C) 2017 Dylan Schacht
+###
+### By: Dylan Schacht (deadhead)
+### Email: deadhead3492@gmail.com
+### Webpage: https://anarchylinux.org
+###
+### Any questions, comments, or bug reports may be sent to above
+### email address. Enjoy, and keep on using Arch.
+###
+### License: GPL v2.0
+###############################################################
+
+ColorOff=$'\e[0m';
+Green=$'\e[0;32m';
+Yellow=$'\e[0;33m';
+Red=$'\e[0;31m';
+
+cpu_type=$(lscpu | awk -F ":" '/Model name:/{print $2}' | sed 's/^ *[[:space:]]//')
+cpu_cores=$(lscpu | awk -F ":" '/^CPU\(s):/{print $2}' | sed 's/^ *[[:space:]]//')
+
+if (lscpu | grep "CPU max MHz" &> /dev/null) then
+    cpu_freq=$(lscpu | awk -F: '/CPU max MHz:/{print $2}' | sed 's/^ *[[:space:]]//')
+else
+    cpu_freq=$(lscpu | awk -F: '/CPU MHz:/{print $2}' | sed 's/^ *[[:space:]]//')
+fi
+
+mem_total=$(free -m | awk 'NR==2 {print $2}')
+mem_used=$(free -m | awk 'NR==2 {print $3}')
+gpu_cpu=$(lspci | grep VGA | cut -c 36- | awk 'NR==1')
+#gpu_dedicated=$(lspci | grep VGA | cut -c 36- | awk 'NR==2')
+block_dev=$(echo -e "${Yellow}Block Devices: \n${Green}$(lsblk | grep "sd." | awk '{print "'${Red}'> '${Red}'"$1" '${Yellow}'Type: '${Red}'"$6" '${Yellow}'Size: '${Red}'"$4" '${Green}'"$7}' | column -t | sed 's/>/    >/')")
+inet_dev=$(echo -e "${Yellow}IP Configuration: \n${Green}$(ip addr | grep -w inet | sed "s/inet/${Red}> ${Green}inet/")")
+kversion=$(uname -srm)
+shell="$SHELL"
+dist=$(lsb_release -a | awk -F: '/Description:/{print $2}' | sed 's/^ *[[:space:]]//')
+
+echo "  ${Red}|${Red}$(whoami)${Green}@${Yellow}$(</etc/hostname) ${Red}------------------------------------------------>"
+echo "  ${Red}|${Yellow}Distribution: ${Red}$dist"
+echo "  ${Red}|${Yellow}System Uptime: ${Red}$(uptime -p)"
+echo "  ${Red}|${Yellow}Kernel Version: ${Red}$kversion"
+echo "  ${Red}|${Yellow}Command Shell: ${Red}$shell"
+echo "  ${Red}|${Yellow}CPU Model: ${Red}$cpu_type"
+echo "  ${Red}|${Yellow}CPU Cores: ${Red}$cpu_cores"
+echo "  ${Red}|${Yellow}CPU Clock: ${Red}$cpu_freq MHz"
+echo "  ${Red}|${Yellow}GPU - CPU: ${Red}$gpu_cpu"
+#echo "  ${Red}|${Yellow}GPU - dedicated: ${Red}$gpu_dedicated"
+echo "  ${Red}|${Yellow}Memory: ${Red}$mem_used MiB / $mem_total MiB"
+echo "  ${Red}|$block_dev"
+echo "  ${Red}|$inet_dev${ColorOff}"
+

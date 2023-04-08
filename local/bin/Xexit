@@ -1,0 +1,25 @@
+#!/bin/bash
+
+declare -a session=(
+"at-spi-dbus-bus" \
+"dbus" \
+"dunst" \
+"firefox-profile@xg1a4enm.default" \
+"firefox-profile@ym0z8rut.garam" \
+"gnome-keyring-daemon.service" \
+"polkit-gnome.service" \
+"powerline-daemon.service"
+"gvfs-daemon" \
+"mpd" \
+"pulseaudio"
+)
+
+for service in "${session[@]}"; do
+    systemctl --user stop "$service"
+done
+
+[[ -S /tmp/dk__0_0.socket ]] && rm -f /tmp/dk__0_0.socket
+rm /tmp/polybar_mqueue.* 2>/dev/null
+sudo rm -f /tmp/serverauth.*
+# powerline-daemon --kill
+pkill -9 -u $USER

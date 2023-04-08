@@ -1,0 +1,31 @@
+#!/usr/bin/env bash
+
+# systemctl --user start Xsession.target &
+
+sh -c "$XDG_CONFIG_HOME"/.fehbg &
+
+# Sound
+# muting HDMI source/sink & webcam mic too.
+for id in 0 1; do
+    pactl set-source-mute "$id" 1
+    pactl set-source-volume "$id" 0%
+done
+
+unset id
+
+DEFAULT_SINK=$(pactl get-default-sink)
+pactl set-sink-volume "${DEFAULT_SINK}" 50%
+pactl set-sink-mute 0 1
+pactl set-sink-volume 0 0%
+
+# Other settings
+cleanup &
+rsync -apq "$SCRIPTDIR"/* "$HOME"/Documents/scripts/ &
+rsync -apq --exclude 'VirtualBox' --exclude 'virt-manager' \
+"$XDG_CONFIG_HOME"/* "$HOME"/Documents/configs/CONFIGS/ &
+
+# Updating blocklist
+sudo hblock -H /etc/hosts.back &
+
+# Updates checking script
+sleep 10s && updates-manager --check
