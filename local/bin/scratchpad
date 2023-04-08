@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Author: Barret E <archus@protonmail.com>
+# github directory: https://github.com/archusXIV/wm_config
+# Youtube channel: <https://www.youtube.com/@linuxinfrench9388>
 # This script hide and show focused windows whithin you favorite
 # window manager or DE by using xdo to proceed
 # We can also use rofi to select and show back hidden windows
