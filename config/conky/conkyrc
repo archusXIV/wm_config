@@ -1,0 +1,40 @@
+conky.config = {
+    out_to_x = false,
+    own_window = false,
+    out_to_console = true,
+    background = false,
+    max_text_width = 0,
+
+    -- Update interval in seconds
+    update_interval = 1.0,
+
+    -- This is the number of times Conky will update before quitting.
+    -- Set to zero to run forever.
+    total_run_times = 0,
+
+    -- Add spaces to keep things from moving about?  This only affects certain objects.
+    -- use_spacer should have an argument of left, right, or none
+    use_spacer = 'none',
+
+    -- Force UTF8? note that UTF8 support required XFT
+    override_utf8_locale = false,
+
+    -- number of cpu samples to average
+    -- set to 1 to disable averaging
+    cpu_avg_samples = 2,
+};
+
+conky.text = [[
+ ${downspeed enp46s0}/${totaldown enp46s0}  ${upspeed enp46s0}/${totalup enp46s0}
+]];
+
+-- Old synthax but still managed by conky.
+-- out_to_x no
+-- out_to_console yes
+-- update_interval 1
+
+
+-- TEXT
+--  ${downspeed enp46s0}/${totaldown enp46s0}  ${upspeed enp46s0}/${totalup enp46s0}
+
+-- ${upspeedgraph enp46s0 26,80 FFFFFF FFFFFF}${goto 150}${downspeedgraph enp46s0 26,80 FFFFFF FFFFFF}
