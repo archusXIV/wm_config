@@ -7,11 +7,7 @@ _Main() {
     source ~/.config/bspwm/_WindowRules
 
     #### MONITORS & DESKTOP SETTINGS ####
-    # $MONITOR{1,2,3} are environment variables.
-    bspc wm -O $MONITOR1 $MONITOR2 $MONITOR3
-    bspc monitor $MONITOR1 -d 1
-    bspc monitor $MONITOR2 -d 2
-    bspc monitor $MONITOR3 -d 3
+    bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
     # bspc desktop ^2 -l monocle
 
@@ -22,11 +18,6 @@ _Main() {
     _Check bspwm_external_rules && \
         bspc config external_rules_command \
             "$(which bspwm_external_rules)"
-
-    _Check bsp-layout && {
-        [[ -n $(pgrep --full bsp-layout) ]] && \
-        kill -KILL $(pgrep --full bsp-layout)
-    }
 
     #### BSPC CONFIG CALLS ####
 
