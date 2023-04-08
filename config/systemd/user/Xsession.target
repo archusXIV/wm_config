@@ -1,0 +1,14 @@
+[Unit]
+Description=X session user's services
+
+BindsTo=graphical-session.target
+
+Wants=dunst.socket
+Wants=pulseaudio.socket
+Wants=gnome-keyring-daemon.socket
+
+Wants=polkit-gnome.service
+Wants=firefox-profile@xg1a4enm.default.service
+Wants=firefox-profile@ym0z8rut.garam.service
+Wants=mpd.service
+Wants=powerline-daemon.service
