@@ -45,5 +45,3 @@ autostart &
 #    (2) exec i3     ;;
 #    (3) exec dk     ;;
 #esac
-#exec i3
-exec bspwm
