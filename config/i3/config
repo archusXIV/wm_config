@@ -1,13 +1,4 @@
 #
-#               ▗▖                       ▗▄▖
-#               ▐▌                       ▝▜▌
-# ▟██▖ █▟█▌ ▟██▖▐▙██▖ ▟██▖▐▙██▖ ▟█▟▌ ▟█▙  ▐▌
-# ▘▄▟▌ █▘  ▐▛  ▘▐▛ ▐▌ ▘▄▟▌▐▛ ▐▌▐▛ ▜▌▐▙▄▟▌ ▐▌
-#▗█▀▜▌ █   ▐▌   ▐▌ ▐▌▗█▀▜▌▐▌ ▐▌▐▌ ▐▌▐▛▀▀▘ ▐▌
-#▐▙▄█▌ █   ▝█▄▄▌▐▌ ▐▌▐▙▄█▌▐▌ ▐▌▝█▄█▌▝█▄▄▌ ▐▙▄
-# ▀▀▝▘ ▀    ▝▀▀ ▝▘ ▝▘ ▀▀▝▘▝▘ ▝▘ ▞▀▐▌ ▝▀▀   ▀▀
-#                               ▜█▛▘
-#
 #-----------------------------------------------------------------------------------------------
 # let's import some other parts of i3 configuration.
 include $XDG_CONFIG_HOME/i3/conf.d/*.conf
@@ -28,22 +19,19 @@ set $Ctl   Control
 #------------------------------------ monitors settings ----------------------------------------
 # for non-free driver
 # see ~/.zshenv
-set $Mon1 DVI-D-0
-set $Mon2 HDMI-0
-set $Mon3 DP-0
+#set $Mon1 DVI-D-0
+#set $Mon2 HDMI-0
+#set $Mon3 DP-0
 
 #----------------------------------- setting workspaces ----------------------------------------
 # FOR POLYBAR:
-# monitor 1
 set $WS1   "1"
 set $WS2   "2"
 set $WS3   "3"
 set $WS4   "4"
-# monitor 2
 set $WS5   "5"
 set $WS6   "6"
 set $WS7   "7"
-# monitor 3
 set $WS8   "8"
 set $WS9   "9"
 set $WS10  "10"
@@ -54,16 +42,16 @@ exec --no-startup-id sxhkd-start
 
 #-------------------------------------- Workspace Bindings --------------------------------------
 # workspace assignment
-workspace $WS1  output $Mon1
-workspace $WS2  output $Mon1
-workspace $WS3  output $Mon1
-workspace $WS4  output $Mon1
-workspace $WS5  output $Mon2
-workspace $WS6  output $Mon2
-workspace $WS7  output $Mon2
-workspace $WS8  output $Mon3
-workspace $WS9  output $Mon3
-workspace $WS10 output $Mon3
+workspace $WS1
+workspace $WS2
+workspace $WS3
+workspace $WS4
+workspace $WS5
+workspace $WS6
+workspace $WS7
+workspace $WS8
+workspace $WS9
+workspace $WS10
 
 workspace_auto_back_and_forth yes
 
