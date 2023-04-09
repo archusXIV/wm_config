@@ -1,0 +1,91 @@
+#
+#               ▗▖                       ▗▄▖
+#               ▐▌                       ▝▜▌
+# ▟██▖ █▟█▌ ▟██▖▐▙██▖ ▟██▖▐▙██▖ ▟█▟▌ ▟█▙  ▐▌
+# ▘▄▟▌ █▘  ▐▛  ▘▐▛ ▐▌ ▘▄▟▌▐▛ ▐▌▐▛ ▜▌▐▙▄▟▌ ▐▌
+#▗█▀▜▌ █   ▐▌   ▐▌ ▐▌▗█▀▜▌▐▌ ▐▌▐▌ ▐▌▐▛▀▀▘ ▐▌
+#▐▙▄█▌ █   ▝█▄▄▌▐▌ ▐▌▐▙▄█▌▐▌ ▐▌▝█▄█▌▝█▄▄▌ ▐▙▄
+# ▀▀▝▘ ▀    ▝▀▀ ▝▘ ▝▘ ▀▀▝▘▝▘ ▝▘ ▞▀▐▌ ▝▀▀   ▀▀
+#                               ▜█▛▘
+#
+#-----------------------------------------------------------------------------------------------
+# let's import some other parts of i3 configuration.
+include $XDG_CONFIG_HOME/i3/conf.d/*.conf
+
+#------------------------------- bar & windows title font --------------------------------------
+# If i3status/i3blocks, this font will be applied
+font pango:Hack Regular 11
+
+#--------------------------------------- main variables ----------------------------------------
+# Mod4 = Super (Windows key)
+# Mod1 = Alt
+set $Mod   Mod4
+set $Alt   Mod1
+set $Super bindsym Mod4
+set $Sht   Shift
+set $Ctl   Control
+
+#------------------------------------ monitors settings ----------------------------------------
+# for non-free driver
+# see ~/.zshenv
+set $Mon1 DVI-D-0
+set $Mon2 HDMI-0
+set $Mon3 DP-0
+
+#----------------------------------- setting workspaces ----------------------------------------
+# FOR POLYBAR:
+# monitor 1
+set $WS1   "1"
+set $WS2   "2"
+set $WS3   "3"
+set $WS4   "4"
+# monitor 2
+set $WS5   "5"
+set $WS6   "6"
+set $WS7   "7"
+# monitor 3
+set $WS8   "8"
+set $WS9   "9"
+set $WS10  "10"
+
+#------------------------------------- autostart apps ------------------------------------------
+exec --no-startup-id launch_polybar
+exec --no-startup-id sxhkd-start
+
+#-------------------------------------- Workspace Bindings --------------------------------------
+# workspace assignment
+workspace $WS1  output $Mon1
+workspace $WS2  output $Mon1
+workspace $WS3  output $Mon1
+workspace $WS4  output $Mon1
+workspace $WS5  output $Mon2
+workspace $WS6  output $Mon2
+workspace $WS7  output $Mon2
+workspace $WS8  output $Mon3
+workspace $WS9  output $Mon3
+workspace $WS10 output $Mon3
+
+workspace_auto_back_and_forth yes
+
+#-------------------------------- Container/Windows control -------------------------------------
+floating_modifier $Mod
+tiling_drag off
+
+#--------------------------- workspace layout: default|stacking|tabbed --------------------------
+workspace_layout tabbed
+default_orientation horizontal
+
+#---------------------- Borders: none|vertical|horizontal|bothsmart & Gaps ----------------------
+hide_edge_borders smart
+default_floating_border normal
+default_border normal
+
+gaps inner 5
+gaps outer 1
+smart_gaps on
+
+# change gaps
+$Super+$Alt+plus       gaps inner current plus  5
+$Super+$Alt+minus      gaps inner current minus 5
+$Super+$Alt+$Sht+plus  gaps outer current plus  5
+$Super+$Alt+$Sht+minus gaps outer current minus 5
