@@ -5,7 +5,7 @@ alt + Escape
 ctrl + alt + Delete
 
 # dmenu/rofi
-Menu ; {d,r}
+super + {d,r}
 
 # scratchpad custom script
 alt + shift + {h,u,r}
