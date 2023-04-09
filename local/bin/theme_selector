@@ -4,12 +4,15 @@
 # A dmenu script to apply a ~/.Xresources color theme.
 # Themes files are located in XDG_CONFIG_HOME/xfiles/themes
 
+rc="$HOME/.config/dmenu/dmenurc"
+[[ -F $rc ]] && source "$rc"
+
 xres_file="$RESOURCES_FILE"
 
 [[ ! -f "$xres_file" ]] && echo "$xres_file: no such file or directory" && exit 1
 
 selected="$(ls "$HOME"/.config/xfiles/themes \
-    | dmenu -i -l 15 \
+    | dmenu -i -l 15 $DMENU_OPTIONS\
     -p "The actual theme is $(grep themes "$xres_file" | sed 's,.*/,,;s/"//')")"
 
 [[ ! -f "$HOME"/.config/xfiles/themes/$selected ]] && exit 1
