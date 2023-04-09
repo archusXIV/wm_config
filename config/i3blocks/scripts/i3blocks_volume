@@ -1,0 +1,10 @@
+#!/bin/bash
+
+vol="pkill -RTMIN+10 i3blocks"
+
+case "$1" in
+		"up") pamixer --allow-boost -i "$2" ; $vol ;;
+		"down") pamixer --allow-boost -d "$2" ; $vol ;;
+		"mute") pamixer --allow-boost -t ; $vol ;;
+		"truemute") pamixer --allow-boost -m ; $vol ;;
+esac
