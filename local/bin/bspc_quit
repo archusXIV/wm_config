@@ -1,0 +1,17 @@
+#!/bin/bash
+
+declare -a proc=("polybar" \
+                "sxhkd" \
+                "sxhkd-watcher" \
+                "bspwm_backnforth" \
+                "python" \
+                "urxvtd")
+
+for i in "${proc[@]}"; do
+    kill -TERM "$(pgrep -f "$i")"
+done
+
+# powerline-daemon --kill
+systemctl --user stop Xsession.target
+bspc quit
+
