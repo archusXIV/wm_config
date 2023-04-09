@@ -15,7 +15,6 @@ _Main() {
     _Check launch_polybar && launch_polybar &
     _Check sxhkd-start && sxhkd-start &
     _Check bspwm_backnforth && bspwm_backnforth
-    _Check autostart && autostart &
     _Check bspwm_external_rules && \
         bspc config external_rules_command \
             "$(which bspwm_external_rules)"
