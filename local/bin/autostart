@@ -1,25 +1,9 @@
 #!/usr/bin/env bash
 
-# Some usefull services
-#dbus-update-activation-environment --systemd --all
-#systemctl --user import-environment DISPLAY
-#systemctl --user start Xsession.target &
-
-# These guys are environment variables.
-#[[ -f $MODMAP ]] && xmodmap "$MODMAP"
-#[[ -f $RESOURCES_FILE ]] && xrdb -load "$RESOURCES_FILE"
 [[ -f $HOME/.fehbg ]] && sh -c "$HOME"/.fehbg &
-
-#xset s off -dpms
-#xset r rate 350 70
-#urxvtd -q -o -f &
-#numlockx on &
-#pcmanfm -d &
 
 # Sound
 DEFAULT_SINK=$(pactl get-default-sink)
 pactl set-sink-volume "${DEFAULT_SINK}" 50%
-pactl set-sink-mute 0 1
-pactl set-sink-volume 0 0%
 
 # Other settings
