@@ -40,8 +40,10 @@ autostart &
 # launch the session, commands below these lines will be ignored
 # Starting Xsession depending on tty.
 # refers to $HOME/.config/zsh/.zlogin
-case $(tty | cut -b9-) in
-    (1) exec bspwm  ;;
-    (2) exec i3     ;;
-    (3) exec dk     ;;
-esac
+#case $(tty | cut -b9-) in
+#    (1) exec bspwm  ;;
+#    (2) exec i3     ;;
+#    (3) exec dk     ;;
+#esac
+#exec i3
+exec bspwm
