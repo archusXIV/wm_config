@@ -1,0 +1,37 @@
+
+#!/bin/bash
+
+# A dmenu script to apply a ~/.Xresources color theme.
+# Themes files are located in XDG_CONFIG_HOME/xfiles/themes
+
+xres_file="$RESOURCES_FILE"
+
+[[ ! -f "$xres_file" ]] && echo "$xres_file: no such file or directory" && exit 1
+
+selected="$(ls "$HOME"/.config/xfiles/themes \
+    | dmenu -i -l 15 \
+    -p "The actual theme is $(grep themes "$xres_file" | sed 's,.*/,,;s/"//')")"
+
+[[ ! -f "$HOME"/.config/xfiles/themes/$selected ]] && exit 1
+
+sed -i --follow-symlinks \
+    "/\#include \"\.config\/xfiles\/themes\//c\\#include \"\.config\/xfiles\/themes\/$selected\"" "$xres_file"
+
+sleep 1s
+
+# Function below calls other scripts.
+_reload() {
+    xrdb -load "$xres_file" \
+    && Terminal_theme_changer \
+    && restart_wm \
+    && launch_polybar \
+    && xre2dmenu \
+    && notify-send 'theme changed'
+}
+
+if [[ -n $(pidof bspwm) ]] \
+	|| [[ -n $(pidof i3) ]]; then
+    _reload
+else
+    exit 1
+fi
