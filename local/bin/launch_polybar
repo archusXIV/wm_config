@@ -16,9 +16,12 @@ done
 
 # We have three window managers installed.
 # So let's find out which one is running.
-
 WM_NAME=$(awk '/Name/{print $2}' < <(wmctrl -m))
 
-polybar "$WM_NAME"-bar-1 -r & disown
+if [[ ! -d ~/.config/polybar ]]; then
+    polybar -r example & disown
+else
+    polybar "$WM_NAME"-bar-1 -r & disown
+fi
 
-notify-send 'Bars launched...'
+notify-send 'Bar launched...'
