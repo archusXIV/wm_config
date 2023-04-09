@@ -1,0 +1,2 @@
+#!/bin/sh
+feh --no-fehbg --bg-tile '$HOME/Documents/wallpapers/groot-i-am-root-qhd.jpg'
