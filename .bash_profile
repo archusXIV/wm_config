@@ -20,9 +20,9 @@
 #fi
 
 # Desktop & directories.
-export XDG_CACHE_HOME="$HOME/.cache/"
+export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
-export XDG_DATA_HOME="$HOME/.local/share/"
+export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_RUNTIME_DIR="/run/user/1000"
 export XDG_STATE_HOME="$HOME/.local/state"
 export GNUPGHOME="${XDG_DATA_HOME:-$HOME/.local/share}/gnupg"
@@ -49,12 +49,10 @@ export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
 export LESSHISTFILE="-"
 export MANWIDTH=100
 export MODMAP="$XDG_CONFIG_HOME"/xfiles/Xmodmap
-export MYVIMRC="$XDG_CONFIG_HOME"/vim/vimrc
 export NANORC_FILE="$XDG_CONFIG_HOME"/nano/nanorc
 export RESOURCES_FILE="$HOME"/.Xresources
 export RXVT_SOCKET="$XDG_RUNTIME_DIR"/urxvtd-socket
 export SXHKD_FIFO="$XDG_RUNTIME_DIR"/sxhkd.fifo
-export VIMINIT=":source $MYVIMRC"
 export XAUTHORITY="$XDG_RUNTIME_DIR"/Xauthority
 export XCURSOR_PATH="${XCURSOR_PATH}:~/.local/share/icons"
 export W3M_DIR="$XDG_CONFIG_HOME/w3m"
