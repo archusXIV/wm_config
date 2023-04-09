@@ -6,13 +6,9 @@ alt + Escape
     pkill -USR1 -x sxhkd; \
     notify-send "sxhkd config reloaded"
 
-# Invoke the session managemnt menu.
-ctrl + alt + Delete
-    rofi_run -l
-
 # dmenu/rofi
-Menu ; {d,r}
-    {dmenu_chooser,rofi_chooser}
+super + d
+    dmenu_chooser
 
 [scratchpad custom script]
 # we let these lines here because we use
