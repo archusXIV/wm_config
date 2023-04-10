@@ -43,7 +43,7 @@ As I said polybar isn't configured (customized) so I you want to, open a termina
 mkdir ~/.config/polybar
 cp /usr/share/doc/polybar/examples/config.ini ~/.config/polybar
 ```
-Then start editing config.ini or visit the polybar wiki, clone it or take a look at my [configs](https://github.com/archusXIV/dotfiles/tree/main/polybar)
+Then start editing config.ini or visit the polybar wiki, clone it or take a look at my [configs](https://github.com/archusXIV/dotfiles/tree/main/polybar), if you change the bar name please replace it in ~/.local/bin/launch_polybar.
 ```
 git clone https://github.com/polybar/polybar.wiki.git
 ```
