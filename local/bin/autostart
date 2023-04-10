@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Screen
+xrandr -s 1920x1080 &
 [[ -f $HOME/.fehbg ]] && sh -c "$HOME"/.fehbg &
 
 # Sound
