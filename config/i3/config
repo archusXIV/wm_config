@@ -41,17 +41,17 @@ exec --no-startup-id launch_polybar
 exec --no-startup-id sxhkd-start
 
 #-------------------------------------- Workspace Bindings --------------------------------------
-# workspace assignment
-workspace $WS1
-workspace $WS2
-workspace $WS3
-workspace $WS4
-workspace $WS5
-workspace $WS6
-workspace $WS7
-workspace $WS8
-workspace $WS9
-workspace $WS10
+# workspace assignment if more than one monitor
+#workspace $WS1  output $Mon1
+#workspace $WS2  output $Mon1
+#workspace $WS3  output $Mon1
+#workspace $WS4  output $Mon1
+#workspace $WS5  output $Mon2
+#workspace $WS6  output $Mon2
+#workspace $WS7  output $Mon2
+#workspace $WS8  output $Mon3
+#workspace $WS9  output $Mon3
+#workspace $WS10 output $Mon3
 
 workspace_auto_back_and_forth yes
 
