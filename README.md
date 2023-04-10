@@ -29,6 +29,7 @@ Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dot
 ./clone_wn
 ```
 ## First run
+BE CAREFULL, don't launch clone_wm on none fresh installed system!!!
 Geany will open this README.md when you first login so you can check your settings such as:
 ```
 ~/.local/bin/autostart
