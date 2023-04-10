@@ -22,10 +22,11 @@ alt + shift + {h,u,r}
 
 [applications bindings]
 # terminal emulators
-alt + {_,shift + }Return
+alt + {_,shift +,ctrl + }Return
     {\
     xterm, \
-    urxvtc -name bashterm -geometry 124x36 -e bash \
+    urxvtc -name bashterm -geometry 124x36, \
+    alacritty \
     }
 
 alt + x ; {r,s}
