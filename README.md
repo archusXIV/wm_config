@@ -16,6 +16,7 @@ The configuration files and scripts are examples so feel free to edit them to fi
 - polybar, not customized but links to configs examples.
 - mpd ncmpcpp pulsemixer
 - gnome-keyring polkit-gnome pulseaudio (all running as systemd user services)
+- sxhkd (also used with i3)
 
 ## installation
 First install the Arch base, then the window manager with these command lines.
@@ -33,7 +34,9 @@ Geany will open this README.md when you first login so you can check your settin
 ~/.local/bin/autostart
 ~/.config/i3/config (the official config is also in the same directory)
 ~/.config/bspwm/bspwmrc
-~/.config/sxhkd/sxhkdrc
+~/.config/sxhkd/sxhkdrc (applications launchers, sound etc...)
+~/.config/sxhkd/sxhkdrc_i3
+~/.config/sxhkd/sxhkdrc_bspwm
 ```
 As I said polybar isn't configured (customized) so I you want to, open a terminal and type:
 ```
