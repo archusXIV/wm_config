@@ -132,7 +132,7 @@ case "$choice" in
 
                 _check_systemd() {
                     [[ -d /run/systemd/system ]] \
-                        && sudo systemctl "$1" \
+                        && systemctl "$1" \
                         || sudo "$1"
                 }
 
