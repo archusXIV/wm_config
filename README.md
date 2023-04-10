@@ -1,4 +1,4 @@
-# wm_config, Arch Linux + i3/bspwm made easy.
+# wm_config (Arch Linux + i3/bspwm made easy).
 ## quickly configure i3, bspwm installed on pure Arch Linux base system via: [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/various/clone_wm) script.
 
 It is made to provide an already configured i3/bspwm 'desktop' just to get you started.
@@ -18,7 +18,7 @@ The configuration files and scripts are examples so feel free to edit them to fi
 - gnome-keyring polkit-gnome pulseaudio (all running as systemd user services)
 
 ## installation
-First install the Arch base, then the window manager with these commandlines.
+First install the Arch base, then the window manager with these command lines.
 ```
 curl -sL "https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/various/install_desktop" -O
 chmod +x install_desktop && ./install_desktop
