@@ -16,7 +16,7 @@ case "$choice" in
     archwiki)   browser=${BROWSER:-firefox}
                 pgrep -x dmenu && exit
                 
-                choice=$(echo "" | dmenu -i $DMENU_OPTIONS -p "Search ArchWiki:") || exit 1
+                choice=$(echo "" | dmenu -b -i $DMENU_OPTIONS -p "Search ArchWiki:") || exit 1
                 
                 if [ "$choice" = ""  ]; then
                     $browser "https://wiki.archlinux.org/"
@@ -46,7 +46,7 @@ case "$choice" in
                     fi
                 }
 
-                selected=$(ls "$SCRIPTDIR" | dmenu -i -l 20 $DMENU_OPTIONS -p "edit/create a script ")
+                selected=$(ls "$SCRIPTDIR" | dmenu -b -i -l 20 $DMENU_OPTIONS -p "edit/create a script ")
                 [[ -z $selected ]] && exit
 
                 _autoscript "$selected"
@@ -54,9 +54,9 @@ case "$choice" in
     config  )   confDir="$HOME/.config/"
                 
                 dirOptions=$(cd ${confDir} && ls -d */ | cut -d " " -f 1)
-                dirChoice=$(echo "${dirOptions[@]}" | dmenu -i $DMENU_OPTIONS -p 'Config directories: ')
+                dirChoice=$(echo "${dirOptions[@]}" | dmenu -b -i $DMENU_OPTIONS -p 'Config directories: ')
                 fileOptions=$(cd ${confDir}${dirChoice} && ls -Ap | cut -d " " -f 1 | grep -v / )
-                fileChoice=$(echo "${fileOptions[@]}" | dmenu -i -l 10 $DMENU_OPTIONS -p 'Edit this file: ')
+                fileChoice=$(echo "${fileOptions[@]}" | dmenu -b -i -l 10 $DMENU_OPTIONS -p 'Edit this file: ')
                     
                 if [ -z "$dirChoice" ]; then
                     exit 0
@@ -66,7 +66,7 @@ case "$choice" in
                 fi
     ;;
     find    )   find ~ | sed 's/ /\\ /g' | sort -f \
-                | dmenu -i -l 20 $DMENU_OPTIONS -p 'finder: '| xargs xdg-open
+                | dmenu -b -i -l 20 $DMENU_OPTIONS -p 'finder: '| xargs xdg-open
     ;;
     keys    )   WM=$(wmctrl -m | awk '/Name/{print $2}')
 
@@ -75,7 +75,7 @@ case "$choice" in
                 {last=""} /^#/{last=$0}' \
                 ~/.config/sxhkd/"$WM"_sxhkdrc_memo \
                 | column -t -s $'\t' \
-                | dmenu -i -l 15 $DMENU_OPTIONS -p "$WM keybindings memo: "
+                | dmenu -b -i -l 15 $DMENU_OPTIONS -p "$WM keybindings memo: "
                 exit 0
     ;;
     man     )   man-display.sh &
@@ -142,7 +142,7 @@ case "$choice" in
 
                 _dynamic_menu() {
                     [[ -n $(command -v dmenu) ]] \
-                        && dmenu -i $DMENU_OPTIONS -p 'Power options' \
+                        && dmenu -b -i $DMENU_OPTIONS -p 'Power options' \
                         || echo "dmenu command not found." && return 1
                 }
 
@@ -157,7 +157,7 @@ case "$choice" in
                 viewer="feh" # Can edit images too.
 
                 choice=$(printf "quick_fullscreen\\ndelayed_fullscreen\\nselection\\nfocused_window" \
-                    | dmenu -i $DMENU_OPTIONS -p "Select a capture type:")
+                    | dmenu -b -i $DMENU_OPTIONS -p "Select a capture type:")
 
                 cd "$scrot_path" || exit 1
 
