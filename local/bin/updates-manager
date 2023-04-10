@@ -5,9 +5,6 @@
 #
 # Yet Another Updates Manager Script for Arch Linux based systems.
 # Checks for updates, lists them in a readable file, update your polybar module.
-# If you want to use this script you will have to change or add permission
-# in your sudoers file. %wheel ALL=(ALL) NOPASSWD: ALL,
-# you may want to create a cron job too.
 
 : "${XDG_RUNTIME_DIR:-/run/user/1000}"
 
@@ -21,8 +18,7 @@ green=$'\e[0;32m';
 
 _CheckUpdates() {
 
-    local updmngr pids location
-    location=$(curl --fail -s https://ipapi.co/country)
+    local updmngr pids
 
     # checking dependencies
     for deps in checkupdates polybar yay wmctrl; do
@@ -39,14 +35,6 @@ _CheckUpdates() {
 
         touch {"$ARCH","$AUR","$ARCHAUR"}
         sleep 0.5
-
-        sudo reflector \
-        --country "$location" \
-        --latest 10 \
-        --age 24 \
-        --protocol https \
-        --sort rate \
-        --save "$MIRR" >/dev/null 2>&1
 
         # because we want to check out the updates list.
         checkupdates | tee "$ARCH" > "$ARCHAUR"
