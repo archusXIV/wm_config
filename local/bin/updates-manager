@@ -5,7 +5,9 @@
 #
 # Yet Another Updates Manager Script for Arch Linux based systems.
 # Checks for updates, lists them in a readable file, update your polybar module.
-# !!! Change your country name in reflector commandline !!!
+# If you want to use this script you will have to change or add permission
+# in your sudoers file. %wheel ALL=(ALL) NOPASSWD: ALL,
+# you may want to create a cron job too.
 
 : "${XDG_RUNTIME_DIR:-/run/user/1000}"
 
