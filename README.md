@@ -19,6 +19,8 @@ The configuration files and scripts are examples so feel free to edit them to fi
 - sxhkd (also used with i3)
 
 ## installation
+BE CAREFULL, don't launch clone_wm on a none fresh installed system!!!
+
 First install the Arch base, then the window manager with these command lines.
 ```
 curl -sL "https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/various/install_desktop" -O
@@ -29,7 +31,6 @@ Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dot
 ./clone_wn
 ```
 ## First run
-BE CAREFULL, don't launch clone_wm on none fresh installed system!!!
 Geany will open this README.md when you first login so you can check your settings such as:
 ```
 ~/.local/bin/autostart
