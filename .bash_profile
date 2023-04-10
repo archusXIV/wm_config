@@ -45,7 +45,6 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR"/keyring/ssh
 export BSPWM_SOCKET="$XDG_RUNTIME_DIR"/bspwm_0_0-socket
 export INPUTRC="$XDG_CONFIG_HOME"/readline/inputrc
 export ICEAUTHORITY="$XDG_CACHE_HOME"/ICEauthority
-#export LANG="en_US.UTF-8"
 export LESSHISTFILE="-"
 export MANWIDTH=100
 export MODMAP="$XDG_CONFIG_HOME"/xfiles/Xmodmap
