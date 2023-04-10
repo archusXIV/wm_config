@@ -28,7 +28,6 @@ _reload() {
     && Terminal_theme_changer \
     && restart_wm \
     && launch_polybar \
-    && xre2dmenu \
     && notify-send 'theme changed'
 }
 
