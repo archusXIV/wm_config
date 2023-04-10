@@ -21,6 +21,7 @@ WM_NAME=$(awk '/Name/{print $2}' < <(wmctrl -m))
 if [[ ! -d ~/.config/polybar ]]; then
     polybar example -r & disown
 else
+    # changing the bar name may break some other scripts.
     polybar "$WM_NAME"-bar-1 -r & disown
 fi
 
