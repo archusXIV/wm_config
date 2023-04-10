@@ -6,7 +6,7 @@ WM_NAME=$(wmctrl -m | awk '/Name/{print $2}')
 [[ -f $rc ]] && source "$rc"
 
 choice=$(printf "apps\\narchwiki\\nautoscript\\nconfig\\nfind\\nkeys\\nman\\npass\\npower\\nscrot\\ntimer" \
-        | dmenu -f -i $DMENU_OPTIONS -p 'Select a script:')
+        | dmenu -f -i -b $DMENU_OPTIONS -p 'Select a script:')
 
 [[ -z $choice ]] && _lite && exit
 
