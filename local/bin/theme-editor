@@ -5,7 +5,7 @@
 
 themedir="$XDG_CONFIG_HOME/xfiles/themes"
 xres_file="$HOME/.Xresources"
-EDITOR="${EDITOR:-lite-xl}"
+EDITOR="${EDITOR:-vim}"
 
 # colors
 nocolor=$'\e[0m';
