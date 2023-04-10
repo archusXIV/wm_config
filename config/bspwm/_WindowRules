@@ -15,6 +15,7 @@ _WindowRules() {
     done < "$FloatingApps"
 
     # Applications assignments & rules for desktops.
+    # See /usr/share/doc/bspwm/examples/bspwmrc for more examples.
     _Rules Geany        desktop=^1 follow=on
     _Rules firefox      desktop=^2 follow=on
     _Rules URxvt:ranger desktop=^3 follow=on
