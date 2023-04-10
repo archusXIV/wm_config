@@ -16,13 +16,6 @@ set $Super bindsym Mod4
 set $Sht   Shift
 set $Ctl   Control
 
-#------------------------------------ monitors settings ----------------------------------------
-# for non-free driver
-# see ~/.zshenv
-#set $Mon1 DVI-D-0
-#set $Mon2 HDMI-0
-#set $Mon3 DP-0
-
 #----------------------------------- setting workspaces ----------------------------------------
 # FOR POLYBAR:
 set $WS1   "1"
@@ -39,6 +32,13 @@ set $WS10  "10"
 #------------------------------------- autostart apps ------------------------------------------
 exec --no-startup-id launch_polybar
 exec --no-startup-id sxhkd-start
+
+#------------------------------------ monitors settings ----------------------------------------
+# for non-free driver
+# see ~/.zshenv
+#set $Mon1 DVI-D-0
+#set $Mon2 HDMI-0
+#set $Mon3 DP-0
 
 #-------------------------------------- Workspace Bindings --------------------------------------
 # workspace assignment if more than one monitor
