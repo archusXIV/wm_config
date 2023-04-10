@@ -10,15 +10,9 @@ if [ -d /etc/X11/xinit/xinitrc.d ]; then
 fi
 
 # user init scripts and settings.
-MAIL="/var/spool/mail"
-
-if [ ! -e "$MAIL" ]; then
-    sudo mkdir -p "$MAIL" >/dev/null 2>&1
-    sudo systemctl restart shadow.timer
-fi
-
 dbus-update-activation-environment --systemd --all
 systemctl --user import-environment DISPLAY
+
 # personal startup services
 systemctl --user start Xsession.target &
 
@@ -38,7 +32,9 @@ numlockx on &
 autostart &
 
 # launch the session, commands below these lines will be ignored
-# Starting Xsession depending on tty.
+# Starting Xsession depending on tty when multiple wm are installed.
+# If you want to use this way for login, uncomment the case statement,
+# and remove the last line of this file.
 # refers to $HOME/.config/zsh/.zlogin
 #case $(tty | cut -b9-) in
 #    (1) exec bspwm  ;;
