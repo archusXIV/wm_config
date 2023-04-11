@@ -9,6 +9,7 @@ DEFAULT_SINK=$(pactl get-default-sink)
 pactl set-sink-volume "${DEFAULT_SINK}" 50%
 
 # first run
+[[ -f $HOME/clon_wm ]] && rm "$HOME"/clon_wm
 geany ~/README.md &
 
 # Other settings
