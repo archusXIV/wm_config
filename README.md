@@ -34,11 +34,16 @@ Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dot
 Geany will open this README.md when you first login so you can check your settings such as:
 ```
 ~/.local/bin/autostart
-~/.config/i3/config (the official config is also in the same directory)
+~/.bashrc
+~/.bash_profile
+~/.zshenv
+~/.config/bash
 ~/.config/bspwm/bspwmrc
+~/.config/i3/config (the official config is also in the same directory)
 ~/.config/sxhkd/sxhkdrc (applications launchers, sound etc...)
 ~/.config/sxhkd/sxhkdrc_i3
 ~/.config/sxhkd/sxhkdrc_bspwm
+~/.config/zsh/
 ```
 As I said polybar isn't configured (customized) so I you want to, open a terminal and type:
 ```
