@@ -1,4 +1,9 @@
 #!/bin/sh
 
-cd "$HOME"/Documents/wallpapers
-feh --no-fehbg --bg-tile 'groot-i-am-root-qhd.jpg'
+if [ -d "$HOME"/Pictures ]]; then
+    cd "$HOME"/Pictures/wallpapers
+    feh --no-fehbg --bg-tile 'groot-i-am-root-qhd.jpg'
+else
+    cd "$HOME"/Images/wallpapers
+    feh --no-fehbg --bg-tile 'groot-i-am-root-qhd.jpg'
+fi
