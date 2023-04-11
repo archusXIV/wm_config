@@ -4,12 +4,6 @@ export TERM="xterm-256color"
 export HISTSIZE=500
 export SAVEHIST=0
 
-# Including all subdirectories from our script folder in our PATH
-typeset -U PATH path
-SCRIPTDIR="$HOME/.local/bin"
-path+=("$SCRIPTDIR" "${SCRIPTDIR}"/*/)
-export PATH
-
 ####### catch non-zsh and non-interactive shells ######
 [[ $- == *i* && $ZSH_VERSION ]] && SHELL=/usr/bin/zsh || return 0
 
