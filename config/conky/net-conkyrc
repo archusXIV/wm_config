@@ -24,6 +24,7 @@ conky.config = {
     cpu_avg_samples = 2,
 };
 
+-- Change the network interface name according to your machine.
 conky.text = [[
  ${downspeed enp7s0}/${totaldown enp7s0}  ${upspeed enp7s0}/${totalup enp7s0}
 ]];
