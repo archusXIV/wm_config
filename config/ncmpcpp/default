@@ -1,0 +1,55 @@
+##############################################################################
+## This is the example configuration file. Copy it to $HOME/.ncmpcpp/config ##
+## or $XDG_CONFIG_HOME/ncmpcpp/config and set up your preferences.          ##
+##############################################################################
+##################   connection & music directories   ########################
+##############################################################################
+ncmpcpp_directory = ~/.config/ncmpcpp/
+lyrics_directory = ~/.cache/lyrics
+mpd_host = localhost
+mpd_port = 6600
+mpd_connection_timeout = 5
+mpd_music_dir = ~/Music/playlists/
+store_lyrics_in_song_dir = no
+##############################################################################
+#########################  music visualizer ##################################
+##############################################################################
+visualizer_fifo_path = /run/user/1000/mpd.fifo
+visualizer_output_name = Visualizer feed
+visualizer_in_stereo = yes
+visualizer_sync_interval = 20
+visualizer_type = spectrum
+visualizer_look = "●●"
+visualizer_color = blue, cyan, green, yellow, magenta, red
+#############################################################################
+#################  playlist & other settings  ###############################
+#############################################################################
+#execute_on_player_state_change = "mpc --format %title% current > ~/.config/cmus/cmus_output && polybar-msg hook cmus-ipc 1 >/dev/null"
+now_playing_prefix = "$b$7>>>  "
+now_playing_suffix = "$/b$9"
+locked_screen_width_part = 60
+empty_tag_marker =
+empty_tag_color = cyan
+tags_separator = " | "
+playlist_display_mode = classic
+ask_before_clearing_playlists = yes
+state_flags_color = yellow
+main_window_color = "default"
+progressbar_look = "■◣ "
+playlist_disable_highlight_delay = 0
+allow_for_physical_item_deletion = yes
+#############################################################################
+#############################  color settings  ##############################
+#############################################################################
+## 0 = default window color (discards all other colors)
+## 1 = black, 2 = red, 3 = green, 4 = yellow, 5 = blue, 6 - magenta, 7 - cyan, 8 - white
+## 9 - end of current color
+#############################################################################
+#############################  text settings  ###############################
+#############################################################################
+## b  bold text ## u  underline text ##  r reverse colors ##  a - use alternative character set
+## %l length ## %f filename ## %D directory
+## %a artist ## %A album artist ## %t title ## %b album
+## %y date ## %n track number (01/12 -> 01) ## %N full track info (01/12 -> 01/12)
+## %g genre ## %c composer ## %p performer ## %d disc ## %C comment
+## %P priority ## $R begin right alignment
