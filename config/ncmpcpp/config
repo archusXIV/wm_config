@@ -41,7 +41,7 @@ volume_color =                          "red"
 ###############################################################################
 ##########################  playlist & other settings  ########################
 ###############################################################################
-execute_on_player_state_change =        polybar-msg -p $(pgrep --full "$(wmctrl -m | awk '/Name/{print $2}')"-bar-2) action "#mpd-ipc.hook.1" >/dev/null 2>&1
+#execute_on_player_state_change =        polybar-msg -p $(pgrep --full "$(wmctrl -m | awk '/Name/{print $2}')"-bar-1) action "#mpd-ipc.hook.1" >/dev/null 2>&1
 autocenter_mode =                       "yes"
 ignore_leading_the =                    "yes"
 ignore_diacritics =                     "yes"
