@@ -60,6 +60,8 @@ flac_to_mp3()
     done
 }
 
+# Increase the volume on video files
+# ffmpeg_volume myvideo.mp4 ($1) 5 (+5dB $2) myvideo2.mp4 ($3)
 ffmpeg_volume()
 {
     ffmpeg -i "$1" -vcodec copy -filter:a "volume="$2"dB" "$3"
@@ -69,8 +71,10 @@ mktar() { tar cvzf "${1%%/}.tar.gz"  "${1%%/}/"; }
 
 mkzip() { zip -r "${1%%/}.zip" "$@"; }
 
+# Uninstall a package and remove it from the cache too.
 pcun() { sudo pacman -Rs "$@" && sudo paccache -ruk0; }
 
+# pacman search for a package
 pacSs()
 {
     echo -e "$(pacman -Ss "$@" | sed \
@@ -80,11 +84,14 @@ pacSs()
         -e 's#^.*/.* [0-9].*#\\033[0;36m&\\033[0;37m#g')"
 }
 
+# pacman search for a package and select among a list of occurences
 pss() {
     PS3=$'\n'"Enter a package number to install, Ctrl C to exit"$'\n\n'">> "
     select pkg in $(pacman -Ssq "$1"); do sudo pacman -S $pkg; break; done
 }
 
+# rename all files in a directory containing spaces
+# and add underscores instead.
 rename() {
   find . -depth -name "* *" -exec \
    bash -c '
@@ -108,6 +115,7 @@ renger()
     [[ -z $dir || $dir == "$PWD" ]] || builtin cd "${dir}" || return 0
 }
 
+# resize images
 resize()
 {
     hash convert >/dev/null 2>&1 || { printf "This function requires imagemagick\n"; return 1; }
@@ -132,6 +140,7 @@ resize()
     fi
 }
 
+# Extract and compress among a list of formats.
 arc()
 {
     arg="$1"; shift
