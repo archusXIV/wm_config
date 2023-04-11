@@ -33,7 +33,7 @@ _Main() {
         "ignore_ewmh_focus true" \
         "initial_polarity first_child" \
         "left_padding 0" \
-        "pointer_modifier mod4" \
+        "pointer_modifier control" \
         "pointer_follows_monitor true" \
         "pointer_follows_focus true" \
         "pointer_action1 move" \
