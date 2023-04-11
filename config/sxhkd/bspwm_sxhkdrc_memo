@@ -4,8 +4,8 @@ alt + Escape
 # Invoke the session managemnt menu.
 ctrl + alt + Delete
 
-# dmenu/rofi
-super + {d,r}
+# dmenu
+super + d
 
 # scratchpad custom script
 alt + shift + {h,u,r}
@@ -25,14 +25,8 @@ alt + g ; {e,f,g,p,v,w}
 # open sxhkdrc_<wm> in vim (s stands for main config)
 super + k ; {b,d,i,s}
 
-# script to launch rofi-record, obs/ssr.
-alt + shift + v ; {a,o,v,k}
-
 # toggle/restart polybar(s)
 ctrl + {_,shift + }{KP_End,KP_Down,KP_Next,KP_Left}
-
-# controls the webcam rectangle position on the screen.
-alt + shift + {Left,Down,Up,Right}
 
 # volume/mic (+ alt)
 XF86Audio{Lower,Mute,Raise}Volume
@@ -67,7 +61,7 @@ super + m
 # alternate, longest_side, spiral
 alt + l ; {a,l,s}
 
-# set the window state.
+# set the window state fullscreen, pseudo-tiled, floating, tiled.
 super + alt + {f,p,s,t}
 
 # assign/remove the locked flag to all win in the current ws.
