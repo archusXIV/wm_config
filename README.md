@@ -1,5 +1,5 @@
 # wm_config
-## quickly configure i3, bspwm installed on pure Arch Linux base system via: [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/various/clone_wm) script.
+## quickly configure i3, bspwm installed on pure Arch Linux base system via: [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/clone_wm) script.
 
 It is made to provide an already configured i3/bspwm 'desktop' just to get you started.
 Of course you will have to work a bit to make it yours completely.
@@ -26,7 +26,7 @@ First install the Arch base, then the window manager with these command lines.
 curl -sL "https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/various/install_desktop" -O
 chmod +x install_desktop && ./install_desktop
 ```
-Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/various/clone_wm) script that has been downloaded during the installation and placed in your $HOME directory. It is already executable.
+Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/clone_wm) script that has been downloaded during the installation and placed in your $HOME directory. It is already executable.
 ```
 ./clone_wn
 ```
