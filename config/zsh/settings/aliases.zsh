@@ -12,16 +12,14 @@ fi
 ## MULTIMEDIA
 alias \
         nc='ncmpcpp -S clock --quiet' \
-        recvid='cd ~/Documents/Videos && ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast $HOME/Documents/Videos/$(date +%a-%d-%S).mkv' \
-        recaudio='cd ~/Documents/Music/ && ffmpeg -f pulse -i 1 -map '0' $HOME/Documents/Music/mic_recording.mp3' \
-        st='Xtreamripper' \
-        ytdlf='youtube-dl -F $1'
+        recvid='ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast $HOME/Documents/Videos/$(date +%a-%d-%S).mkv' \
+        recaudio='ffmpeg -f pulse -i 1 -map '0' $HOME/Documents/Music/mic_recording.mp3'
 
 ## UTILITIES & GENERAL INFO
 alias \
         c='clear' \
         grep='grep --color=auto' \
-        ht='htop -u archangel -s Command' \
+        ht='htop -u $USER -s Command' \
         nano='nano --rcfile $NANORC_FILE' \
         q='exit 0' \
         sf='sudo ranger' \
@@ -37,7 +35,7 @@ alias \
 ## RC's & CONFIGS
 alias \
         aliases='v $HOME/.config/zsh/settings/aliases.zsh' \
-        bspcrc='v $HOME/.config/sxhkd/sxhkdrc_bspc' \
+        bspcrc='v $HOME/.config/sxhkd/sxhkdrc_bspwm' \
         bspwmrc='v $HOME/.config/bspwm/bspwmrc' \
         funcs='v $HOME/.config/zsh/settings/funcs.zsh' \
         gpgl='gpg --homedir=$XDG_DATA_HOME/gnupg --list-keys' \
@@ -67,7 +65,6 @@ alias \
 ## PACKAGES MANAGEMNT
 alias \
         lspkg='ls /var/cache/pacman/pkg | more' \
-        mir='sudo reflector --verbose --country 'France' --age 24 --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist' \
         mpminst='sudo ./install.sh' \
         orphans='pacman -Qdqt' \
         orphans!='sudo pacman -Rs $(pacman -Qdqt) && sudo /usr/bin/paccache -ruk0' \
@@ -77,7 +74,5 @@ alias \
         plsa='pacman -Qm' \
         remove='sudo pacman -R --nosave --recursive' \
         psyu='sudo pacman -Syu' \
-        umh='updates-manager --hook' \
-        uml='updates-manager --list' \
         yeah='yay -Sua'
 
