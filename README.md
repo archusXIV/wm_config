@@ -11,7 +11,7 @@ The configuration files and scripts are examples so feel free to edit them to fi
 - vim geany
 - terminals (alacritty,urxvt,xterm)
 - dmenu rofi
-- a lot of Xresources themes
+- a lot of Xresources themes (~/.config/xfiles/themes)
 - feh (as wallpaper setter)
 - polybar, not customized but links to configs examples.
 - mpd ncmpcpp pulsemixer
