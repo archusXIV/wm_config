@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 # Screen
+# Change the screen resolution according to your monitor settings.
 xrandr -s 1920x1080 &
 [[ -f $HOME/.fehbg ]] && sh -c "$HOME"/.fehbg &
 
