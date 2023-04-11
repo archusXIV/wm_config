@@ -2,9 +2,13 @@
 
 # Author: Barret E (2020-21) <archus@protonmail.con>
 # https://github.com/archusXIV/dotfiles
-#
+# Dependencies: checkupdates polybar yay wmctrl
 # Yet Another Updates Manager Script for Arch Linux based systems.
 # Checks for updates, lists them in a readable file, update your polybar module.
+# Make sure that your mirrorlist is frequently update.
+# In ~/.local/bin/autostart add: updates-manager --check (no ampersand at the end)
+# So it will run in the background.
+# To check manualy for updates then type: updates-manager --list
 
 : "${XDG_RUNTIME_DIR:-/run/user/1000}"
 
