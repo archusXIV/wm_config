@@ -29,8 +29,8 @@ export ZDOTDIR="${XDG_CONFIG_HOME:-$HOME/.config}/zsh"
 
 # Default programs.
 export BROWSER="firefox"
-export EDITOR="vim"
-export MANPAGER="/bin/sh -c \"col -b | vim --not-a-term -c 'set ft=man ts=8 nomod nolist noma' -\""
+export EDITOR="geany"
+export MANPAGER="less"
 export MIXER="pulsemixer"
 export PAGER="less"
 export READER="zathura"
