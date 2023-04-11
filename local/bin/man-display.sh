@@ -7,4 +7,4 @@ rc="$HOME/.config/dmenu/dmenurc"
 
 [ -f "$rc" ] && . "$rc"
 
-man -k . | dmenu -l 30 $DMENU_OPTIONS | awk '{print $1}' | xargs -r man -Tpdf | zathura -
+man -k . | dmenu -b -l 30 $DMENU_OPTIONS | awk '{print $1}' | xargs -r man -Tpdf | zathura -
