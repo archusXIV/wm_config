@@ -16,9 +16,11 @@ _WindowRules() {
 
     # Applications assignments & rules for desktops.
     # See /usr/share/doc/bspwm/examples/bspwmrc for more examples.
-    _Rules Geany        desktop=^1 follow=on
-    _Rules firefox      desktop=^2 follow=on
-    _Rules URxvt:ranger desktop=^3 follow=on
+    _Rules Geany         desktop=^1 follow=on
+    _Rules firefox       desktop=^2 follow=on
+    _Rules URxvt:ranger  desktop=^3 follow=on
+    _Rules URxvt:ncmpcpp desktop=^4 follow=on
+    _Rules URxvt:htop    desktop=^5 follow=on
 
    # No desktop rules
     _Rules Five-or-more   follow=on rectangle=434x488+2662+281
