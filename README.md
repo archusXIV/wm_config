@@ -31,7 +31,7 @@ Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dot
 ./clone_wn
 ```
 ## Dmenu scripts launcher
-For user convenience when pressing mod4 + d a dmenu with subcategories will appear at the bottom of the screen. Where you can find an application menu, archwiki finder, autoscript editing function, a menu to open configs, a finder, keyboard shortcuts reminder, a man-pages function, power menu, and a screenshooter.
+For user convenience when pressing mod4 + d a dmenu with subcategories will appear at the bottom of the screen. Where you can find an application menu, archwiki finder, autoscript editing function, a menu to open configs, a finder, keyboard shortcuts reminder, power menu, and a screenshooter.
 ## First run
 Geany will open this README.md when you first login so you can check your settings such as:
 
