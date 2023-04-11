@@ -34,20 +34,20 @@ Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dot
 For user convenience when pressing mod4 + d a dmenu with subcategories will appear at the bottom of the screen. Where you can find an application menu, archwiki finder, autoscript editing function, a menu to open configs, a finder, keyboard shortcuts reminder, a man-pages function, power menu, and a screenshooter.
 ## First run
 Geany will open this README.md when you first login so you can check your settings such as:
-```
-~/.bashrc
-~/.bash_profile
-~/.xinitrc
-~/.zshenv
-~/.config/bash
-~/.config/bspwm/bspwmrc
-~/.config/i3/config (the official config is also in the same directory)
-~/.config/sxhkd/sxhkdrc (applications launchers, sound etc...)
-~/.config/sxhkd/sxhkdrc_i3
-~/.config/sxhkd/sxhkdrc_bspwm
-~/.config/zsh/
-~/.local/bin/autostart
-```
+
+- .bashrc
+- .bash_profile
+- .xinitrc
+- .zshenv
+- .config/bash
+- .config/bspwm/bspwmrc
+- .config/i3/config (the official config is also in the same directory)
+- .config/sxhkd/sxhkdrc (applications launchers, sound etc...)
+- .config/sxhkd/sxhkdrc_i3
+- .config/sxhkd/sxhkdrc_bspwm
+- .config/zsh/
+- .local/bin/autostart
+
 As I said polybar isn't configured (customized) so I you want to, open a terminal and type:
 ```
 mkdir ~/.config/polybar
