@@ -12,7 +12,7 @@ fi
 ## MULTIMEDIA
 alias \
         nc='ncmpcpp -S clock --quiet' \
-        recvid='ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast $HOME/Documents/Videos/$(date +%a-%d-%S).mkv' \
+        recvid='ffmpeg -video_size 1920x1080 -framerate 60 -f x11grab -i :0.0 -c:v libx264 -qp 0 -preset ultrafast $HOME/Documents/$(date +%a-%d-%S).mkv' \
         recaudio='ffmpeg -f pulse -i 1 -map '0' $HOME/Documents/Music/mic_recording.mp3'
 
 ## UTILITIES & GENERAL INFO
@@ -61,7 +61,6 @@ alias \
 ## PACKAGES MANAGEMNT
 alias \
         lspkg='ls /var/cache/pacman/pkg | more' \
-        mir='sudo reflector --verbose --country 'France' --age 24 --latest 15 --protocol http --protocol https --sort rate --save /etc/pacman.d/mirrorlist' \
         orphans='pacman -Qdqt' \
         orphans!='sudo pacman -Rs $(pacman -Qdqt) && sudo /usr/bin/paccache -ruk0' \
         cleancache='sudo pacman -Scc' \
