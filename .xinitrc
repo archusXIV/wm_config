@@ -39,5 +39,5 @@ autostart &
 #case $(tty | cut -b9-) in
 #    (1) exec bspwm  ;;
 #    (2) exec i3     ;;
-#    (3) exec dk     ;;
+#    (3) exec /usr/local/bin/dk > ~/.config/dk/debbug.log ;;
 #esac
