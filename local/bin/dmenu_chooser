@@ -5,7 +5,7 @@ WM_NAME=$(wmctrl -m | awk '/Name/{print $2}')
 
 [[ -f $rc ]] && source "$rc"
 
-choice=$(printf "apps\\narchwiki\\nautoscript\\nconfig\\nfind\\nkeys\\nman pager\\npower\\nscrot" \
+choice=$(printf "apps\\narchwiki\\nautoscript\\nconfig\\nfind\\nkeys\\npower\\nscrot" \
         | dmenu -f -i -b $DMENU_OPTIONS -p 'Select a script:')
 
 [[ -z $choice ]] && _lite && exit
@@ -77,8 +77,6 @@ case "$choice" in
                 | column -t -s $'\t' \
                 | dmenu -b -i -l 15 $DMENU_OPTIONS -p "$WM keybindings memo: "
                 exit 0
-    ;;
-    man     )   man-display.sh &
     ;;
     power   )   _main() {
                     # Possible actions
