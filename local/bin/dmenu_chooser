@@ -5,7 +5,7 @@ WM_NAME=$(wmctrl -m | awk '/Name/{print $2}')
 
 [[ -f $rc ]] && source "$rc"
 
-choice=$(printf "apps\\narchwiki\\nautoscript\\nconfig\\nfind\\nkeys\\nman\\npass\\npower\\nscrot\\ntimer" \
+choice=$(printf "apps\\narchwiki\\nautoscript\\nconfig\\nfind\\nkeys\\nman pager\\npower\\nscrot" \
         | dmenu -f -i -b $DMENU_OPTIONS -p 'Select a script:')
 
 [[ -z $choice ]] && _lite && exit
@@ -80,40 +80,6 @@ case "$choice" in
     ;;
     man     )   man-display.sh &
     ;;
-    pass    )   shopt -s nullglob globstar
-
-                typeit=0
-                if [[ $1 == "--type" ]]; then
-                    typeit=1
-                    shift
-                fi
-                
-                if [[ -n $WAYLAND_DISPLAY ]]; then
-                    dmenu=dmenu-wl
-                    xdotool="ydotool type --file -"
-                elif [[ -n $DISPLAY ]]; then
-                    dmenu=dmenu
-                    xdotool="xdotool type --clearmodifiers --file -"
-                else
-                    echo "Error: No Wayland or X11 display detected" >&2
-                    exit 1
-                fi
-                
-                prefix=${PASSWORD_STORE_DIR-~/.password-store}
-                password_files=( "$prefix"/**/*.gpg )
-                password_files=( "${password_files[@]#"$prefix"/}" )
-                password_files=( "${password_files[@]%.gpg}" )
-                
-                password=$(printf '%s\n' "${password_files[@]}" | "$dmenu" "$@")
-                
-                [[ -n $password ]] || exit
-                
-                if [[ $typeit -eq 0 ]]; then
-                    pass show -c "$password" 2>/dev/null
-                else
-                    pass show "$password" | { IFS= read -r pass; printf %s "$pass"; } | $xdotool
-                fi
-    ;;
     power   )   _main() {
                     # Possible actions
                     actions=('Lockscreen ' 'WM restart ' 'Exit ' 'Reboot ' 'Power off ')
@@ -153,7 +119,7 @@ case "$choice" in
 
                 _main "${@}"
     ;;
-    scrot   )   scrot_path="$HOME/Pictures/"
+    scrot   )   scrot_path="$HOME/Documents/"
                 viewer="feh" # Can edit images too.
 
                 choice=$(printf "quick_fullscreen\\ndelayed_fullscreen\\nselection\\nfocused_window" \
