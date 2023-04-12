@@ -4,7 +4,7 @@
 
 ## INFO
 # user is already defined
-host="$(hostname)"
+host="$(cat /etc/hostname)"
 os='Arch Linux'
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
