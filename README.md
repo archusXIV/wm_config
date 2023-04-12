@@ -23,7 +23,7 @@ BE CAREFULL, don't launch clone_wm on a none fresh installed system!!!
 
 First install the Arch base, then the window manager with these command lines.
 ```
-curl -sL "https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/various/install_desktop" -O
+curl -sL "https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_desktop" -O
 chmod +x install_desktop && ./install_desktop
 ```
 Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/clone_wm) script that has been downloaded during the installation and placed in your $HOME directory. It is already executable.
