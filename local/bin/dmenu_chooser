@@ -141,6 +141,7 @@ case "$choice" in
                     *)                  notify-send 'No screenshot taken!'
                     ;;
                 esac
+    ;;	
     themes)     xres_file="$RESOURCES_FILE"
 
                 [[ ! -f "$xres_file" ]] && echo "$xres_file: no such file or directory" && exit 1
