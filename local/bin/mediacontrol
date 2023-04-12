@@ -5,6 +5,8 @@
     pactl list sink-inputs, and echoes the name of the active player.
     If the player is "Corked" it is active but not
     playing any sound (probably paused)
+    Optional dependency: mpvc
+    https://github.com/lwilletts/mpvc
 ABOUT
 
 _whoisplaying() {
