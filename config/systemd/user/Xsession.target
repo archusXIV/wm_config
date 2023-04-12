@@ -7,5 +7,6 @@ Wants=dunst.socket
 Wants=pulseaudio.socket
 Wants=gnome-keyring-daemon.socket
 
+Wants=mpd.service
 Wants=polkit-gnome.service
 Wants=powerline-daemon.service
