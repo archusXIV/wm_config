@@ -155,6 +155,7 @@ _MakeUpdates() {
 
     declare -a criteria=(
     "amd-ucode" \
+    "intel-ucode" \
     "grub" \
     "linux" \
     "mesa" \
