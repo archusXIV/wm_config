@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+# First enable updatedb.timer
 if [[ $(systemctl status updatedb.timer \
     | awk '/Active:/{print $3}') = '(waiting)' ]]; then
     locate / | rofi -normal-window -threads 0 \
@@ -9,4 +10,3 @@ else
     locate / | rofi -normal-window -threads 0 \
     -width 50 -dmenu -i -p "locate " | xargs -r -0 xdg-open
 fi
-
