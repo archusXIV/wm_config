@@ -7,7 +7,7 @@ case "$1" in
     ;;
     -e) urxvtc -name mutt -e neomutt
     ;;
-    -h) urxvtc -name htop -e htop -s Command
+    -h) urxvtc -name htop -e htop -u $USER -s Command
     ;;
     -j) urxvtc -name jnettop -e sudo jnettop -i enp7s0
     ;;
