@@ -1,6 +1,6 @@
 #!/bin/sh
 
-if [ -d "$HOME"/Pictures ]]; then
+if [[ -d "$HOME"/Pictures ]]; then
     cd "$HOME"/Pictures/wallpapers
     feh --no-fehbg --bg-tile 'groot-i-am-root-qhd.jpg'
 else
