@@ -5,7 +5,7 @@
 ## INFO
 # user is already defined
 host="$(cat /etc/hostname)"
-os=$(lsb_release -a | awk '/Description:/{print $2" "$3}')
+os=$(lsb_release -d | awk '{print $2" "$3}')
 kernel="$(uname -sr)"
 uptime="$(uptime -p | sed 's/up //')"
 packages="$(pacman -Q | wc -l)"
