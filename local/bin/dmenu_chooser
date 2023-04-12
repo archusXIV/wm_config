@@ -146,13 +146,7 @@ case "$choice" in
                 [[ ! -f "$xres_file" ]] && echo "$xres_file: no such file or directory" && exit 1
 
                 selected="$(ls "$HOME"/.config/xfiles/themes \
-                | rofi -normal-window \
-                -dmenu -width 25 \
-                -hide-scrollbar \
-                -line-padding  \
-                -padding 20 \
-                -lines 10 \
-                -columns 2 \
+                | dmenu -b -i \
                 -p "The actual theme is $(grep themes "$xres_file" | sed 's,.*/,,;s/"//')")"
 
                 [[ ! -f "$HOME"/.config/xfiles/themes/$selected ]] && exit 1
