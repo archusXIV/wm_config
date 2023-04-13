@@ -54,7 +54,7 @@ _CheckUpdates() {
         fi
 
         wm=$(wmctrl -m | awk '/Name/{print $2}')
-        barpid=$(pgrep --full $wm-bar-1)
+        barpid=$(pgrep --full $wm-bar)
 
         polybar-msg -p ${barpid} \
         action "#updates-ipc.hook.0" >/dev/null 2>&1
@@ -107,7 +107,7 @@ _Reboot() {
 }
 
 WM=$(wmctrl -m | awk '/Name:/{print $2}')
-BARPID=$(pgrep --full $WM-bar-1)
+BARPID=$(pgrep --full $WM-bar)
 
 _NoReboot() {
     sudo cp -f "$MIRR" "$BCKP"
