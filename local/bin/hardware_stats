@@ -13,12 +13,12 @@ _mpd() {
     if [[ $(pactl list sink-inputs | grep -w 'mpd') ]]; then
         if [[ -z $(pidof ncmpcpp) ]]; then
             polybar-msg \
-            -p "$(pgrep --full "$WM_NAME"-bar-2)" \
+            -p "$(pgrep --full "$WM_NAME"-bar)" \
             action "#mpd-ipc.hook.1" >/dev/null 2>&1
         fi
     else
         polybar-msg \
-        -p "$(pgrep --full "$WM_NAME"-bar-2)" \
+        -p "$(pgrep --full "$WM_NAME"-bar)" \
         action "#mpd-ipc.hook.0" >/dev/null 2>&1
     fi
 }
@@ -31,10 +31,10 @@ _mpv() {
         echo '{ "command": ["get_property", "media-title"] }' \
         | socat - /tmp/mpvsocket | awk -F '"' '{print $4}' > "$metadata"
 
-        polybar-msg -p "$(pgrep --full "$WM_NAME"-bar-3)" \
+        polybar-msg -p "$(pgrep --full "$WM_NAME"-bar)" \
         action "#mpv-ipc.hook.1"
 
-    } || polybar-msg -p "$(pgrep --full "$WM_NAME"-bar-3)" \
+    } || polybar-msg -p "$(pgrep --full "$WM_NAME"-bar)" \
          action "#mpv-ipc.hook.0"
 }
 
