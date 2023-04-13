@@ -4,7 +4,7 @@
 # - indicate when in a chord chain,
 # the last hotkey and the corresponding command.
 
-pid=$(pgrep --full $(wmctrl -m | awk '/Name/{print $2}')-bar-1)
+pid=$(pgrep --full $(wmctrl -m | awk '/Name/{print $2}')-bar)
 cmd="$XDG_RUNTIME_DIR/cmd.txt"
 keys="$XDG_RUNTIME_DIR/keys.txt"
 
