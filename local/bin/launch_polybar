@@ -22,7 +22,7 @@ if [[ ! -d ~/.config/polybar ]]; then
     polybar example -r & disown
 else
     # changing the bar name may break some other scripts.
-    polybar "$WM_NAME"-bar-1 -r & disown
+    polybar "$WM_NAME"-bar -r & disown
 fi
 
 notify-send 'Bar launched...'
