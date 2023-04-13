@@ -1,5 +1,7 @@
 #########################################################################
 # THIS FILE IS THE BSPWM WINDOWS, DESKTOP, MONITORS & LAYOUTS SHORTCUTS #
+# There are a lot of shortcuts here so use super +d and seach keys,     #
+# a dmenu will appear with all shortcuts related to this file.          #
 #########################################################################
 # restart/quit bspwm.
 ctrl + alt + {r,q}
