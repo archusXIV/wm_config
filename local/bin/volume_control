@@ -28,7 +28,7 @@ GET_SOURCE_MUTE=$(pactl get-source-mute "${DEFAULT_SOURCE}")
 
 # finding proper pid for proper bar-2
 WDMNGR=$(awk '/Name/{print $2}' < <(wmctrl -m))
-BARPID=$(pgrep --full $WDMNGR-bar-2)
+BARPID=$(pgrep --full $WDMNGR-bar)
 
 # sending message to polybar
 _hook_sink_on() {
