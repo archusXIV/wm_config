@@ -1,7 +1,7 @@
 # wm_config
 ## quickly configure i3, bspwm installed on pure Arch Linux base system via: [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/clone_wm) script.
 
-It is made to provide an already configured i3/bspwm 'desktop' just to get you started. Both configurations and associated tools will be installed, meaning if you choose to install i3, bspwm files will be present in ~/.config & ~/.local/bin so you can later on install bspwm package with pacman.
+It is made to provide an already configured i3/bspwm 'desktop' just to get you started. Both configurations and associated tools will be installed, meaning if you choose to install i3, bspwm files will be present in ~/.config & ~/.local/bin so you can later on install bspwm package with pacman and vice versa.
 Of course you will have to work a bit to make it yours completely.
 
 The configuration files and scripts are examples so feel free to edit them to fit your needs.
