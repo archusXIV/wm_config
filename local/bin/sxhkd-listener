@@ -14,7 +14,7 @@ while read -r line <&3; do
     esac
 
     polybar-msg -p \
-    $(pgrep --full "$(wmctrl -m | awk '/Name/{print $2}')"-bar-1) \
+    $(pgrep --full "$(wmctrl -m | awk '/Name/{print $2}')"-bar) \
     action "#sxhkd-ipc.hook.${hook}" >/dev/null 2>&1
 
 done
