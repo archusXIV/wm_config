@@ -18,7 +18,7 @@ _Dependencies() {
 }
 
 # Place your polybar module in bar-3
-BARPID=$(pgrep --full $(wmctrl -m | awk '/Name/{print $2}')-bar-3)
+BARPID=$(pgrep --full $(wmctrl -m | awk '/Name/{print $2}')-bar)
 
 _Indicator() {
     case "$1" in
