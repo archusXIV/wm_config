@@ -33,9 +33,3 @@ conky.text = [[
 -- out_to_x no
 -- out_to_console yes
 -- update_interval 1
-
-
--- TEXT
---  ${downspeed enp7s0}/${totaldown enp7s0}  ${upspeed enp7s0}/${totalup enp7s0}
-
--- ${upspeedgraph enp7s0 26,80 FFFFFF FFFFFF}${goto 150}${downspeedgraph enp7s0 26,80 FFFFFF FFFFFF}
