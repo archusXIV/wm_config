@@ -147,7 +147,7 @@ case "$choice" in
                 [[ ! -f "$xres_file" ]] && echo "$xres_file: no such file or directory" && exit 1
 
                 selected="$(ls "$HOME"/.config/xfiles/themes \
-                | dmenu -b -i \
+                | dmenu -b -i -l 10 $DMENU_OPTIONS \
                 -p "The actual theme is $(grep themes "$xres_file" | sed 's,.*/,,;s/"//')")"
 
                 [[ ! -f "$HOME"/.config/xfiles/themes/$selected ]] && exit 1
