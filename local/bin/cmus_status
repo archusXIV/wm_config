@@ -55,7 +55,7 @@ else
 fi
 
 output="$XDG_RUNTIME_DIR/music_player_output.txt"
-barpid=$(pgrep --full "$(wmctrl -m | awk '/Name/{print $2}')"-bar-2)
+barpid=$(pgrep --full "$(wmctrl -m | awk '/Name/{print $2}')"-bar)
 
 echo "${msg}" > "${output}"
 
