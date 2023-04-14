@@ -14,3 +14,4 @@ pactl set-sink-volume "${DEFAULT_SINK}" 50%
 geany ~/README.md &
 
 # Other settings
+#sleep 10s && updates-manager --check
