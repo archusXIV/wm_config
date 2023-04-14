@@ -22,7 +22,7 @@ _WindowRules() {
     _Rules URxvt:ncmpcpp desktop=^4 follow=on
     _Rules URxvt:htop    desktop=^5 follow=on
 
-   # No desktop rules
+    # No desktop rules
     _Rules Five-or-more   follow=on rectangle=434x488+2662+281
-    _Rules URxvt:floaterm follow=on rectangle=695x293+2251+243
+    _Rules URxvt:floaterm follow=on rectangle=695x293+851+243
 }
