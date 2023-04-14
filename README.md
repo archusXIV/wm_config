@@ -30,15 +30,6 @@ Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dot
 ```
 ./clone_wn
 ```
-## Dmenu scripts launcher
-For user convenience when pressing mod4 + d a dmenu with subcategories will appear at the bottom of the screen. Where you can find an application menu, archwiki finder, autoscript editing function, a menu to open configs, a finder, keyboard shortcuts reminder, power menu, theme selector and a screenshooter.
-## mpd configuration
-Just modify its configuration in ~/.config/mpd/mpd.conf according to your likings (music path etc...).
-Uncomment line 10 in ~/.config/systemd/user/Xsession.target then reload the systemd config:
-```
-systemctl --user deamon-reload && systemctl --user start mpd.service
-```
-Ncmpcpp is already here but please check its configuration file in ~/.config/ncmpcpp/config.
 ## First run
 Geany will open this README.md when you first login so you can check your settings such as:
 
@@ -54,6 +45,15 @@ Geany will open this README.md when you first login so you can check your settin
 - .config/sxhkd/sxhkdrc_bspwm
 - .config/zsh/
 - .local/bin/autostart
+## Dmenu scripts launcher
+For user convenience when pressing mod4 + d a dmenu with subcategories will appear at the bottom of the screen. Where you can find an application menu, archwiki finder, autoscript editing function, a menu to open configs, a finder, keyboard shortcuts reminder, power menu, theme selector and a screenshooter.
+## mpd configuration
+Just modify its configuration in ~/.config/mpd/mpd.conf according to your likings (music path etc...).
+Uncomment line 10 in ~/.config/systemd/user/Xsession.target then reload the systemd config:
+```
+systemctl --user deamon-reload && systemctl --user start mpd.service
+```
+Ncmpcpp is already here but please check its configuration file in ~/.config/ncmpcpp/config.
 ## Polybar configuration
 Visit the polybar wiki, clone it or take a look at my [configs](https://github.com/archusXIV/dotfiles/tree/main/polybar), if you change the bar name please replace it in ~/.local/bin/launch_polybar & some other scripts.
 ```
