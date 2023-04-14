@@ -54,13 +54,9 @@ Geany will open this README.md when you first login so you can check your settin
 - .config/sxhkd/sxhkdrc_bspwm
 - .config/zsh/
 - .local/bin/autostart
-
-As I said polybar isn't configured (customized) so I you want to, open a terminal and type:
+## Polybar configuration
+Visit the polybar wiki, clone it or take a look at my [configs](https://github.com/archusXIV/dotfiles/tree/main/polybar), if you change the bar name please replace it in ~/.local/bin/launch_polybar & some other scripts.
 ```
-mkdir ~/.config/polybar
-cp /usr/share/doc/polybar/examples/config.ini ~/.config/polybar
-```
-Then start editing config.ini or visit the polybar wiki, clone it or take a look at my [configs](https://github.com/archusXIV/dotfiles/tree/main/polybar), if you change the bar name please replace it in ~/.local/bin/launch_polybar.
-```
+cd ~/.config/polybar
 git clone https://github.com/polybar/polybar.wiki.git
 ```
