@@ -13,7 +13,7 @@ The configuration files and scripts are examples so feel free to edit them to fi
 - dmenu rofi
 - a lot of Xresources themes (~/.config/xfiles/themes using theme_selector script)
 - feh (as wallpaper setter)
-- polybar, not customized but links to configs examples.
+- polybar a little bit customized.
 - mpd ncmpcpp pulsemixer
 - gnome-keyring polkit-gnome pulseaudio (all running as systemd user services)
 - sxhkd (also used with i3)
@@ -45,8 +45,10 @@ Geany will open this README.md when you first login so you can check your settin
 - .config/sxhkd/sxhkdrc_bspwm
 - .config/zsh/
 - .local/bin/autostart
+
 ## Dmenu scripts launcher
 For user convenience when pressing mod4 + d a dmenu with subcategories will appear at the bottom of the screen. Where you can find an application menu, archwiki finder, autoscript editing function, a menu to open configs, a finder, keyboard shortcuts reminder, power menu, theme selector and a screenshooter.
+
 ## mpd configuration
 Just modify its configuration in ~/.config/mpd/mpd.conf according to your likings (music path etc...).
 Uncomment line 10 in ~/.config/systemd/user/Xsession.target then reload the systemd config:
@@ -54,6 +56,7 @@ Uncomment line 10 in ~/.config/systemd/user/Xsession.target then reload the syst
 systemctl --user deamon-reload && systemctl --user start mpd.service
 ```
 Ncmpcpp is already here but please check its configuration file in ~/.config/ncmpcpp/config.
+
 ## Polybar configuration
 Visit the polybar wiki, clone it or take a look at my [configs](https://github.com/archusXIV/dotfiles/tree/main/polybar), if you change the bar name please replace it in ~/.local/bin/launch_polybar & some other scripts.
 ```
