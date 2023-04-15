@@ -26,7 +26,7 @@ conky.config = {
 
 -- Change the network interface name according to your machine.
 conky.text = [[
- ${downspeed enp7s0}/${totaldown enp7s0}  ${upspeed enp7s0}/${totalup enp7s0}
+ ${downspeed enp0s3}/${totaldown enp0s3}  ${upspeed enp0s3}/${totalup enp0s3}
 ]];
 
 -- Old synthax but still managed by conky.
