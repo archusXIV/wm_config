@@ -14,4 +14,5 @@ pactl set-sink-volume "${DEFAULT_SINK}" 50%
 geany ~/README.md &
 
 # Other settings
+# Yay must be installed in order to use ~/.local/bin/updates-manager
 #sleep 10s && updates-manager --check
