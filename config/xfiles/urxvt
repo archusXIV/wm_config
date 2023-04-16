@@ -13,7 +13,7 @@ URxvt*termName:               rxvt-unicode-256color
 !URxvt.url-select.launcher:    firefox
 Urxvt*buffered:               false
 URxvt.intensityStyles:        false
-URxvt.font:                   xft:Monospace:size=12:antialias=true, \
+URxvt.font:                   xft:Hack:size=12:antialias=true, \
                               xft:DroidSansMonoForPowerlinePlusNerdFileTypesMono:pixelsize=12
 URxvt.boldfont:               xft:Monospace-Bold:size=14
 URxvt.saveLines:              10000
