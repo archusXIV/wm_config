@@ -26,7 +26,6 @@ _reload() {
     xrdb -load "$xres_file" \
     && Terminal_theme_changer \
     && restart_wm \
-    && launch_polybar \
     && notify-send 'theme changed'
 }
 
