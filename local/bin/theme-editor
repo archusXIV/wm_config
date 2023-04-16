@@ -24,7 +24,6 @@ _apply_theme() {
     xrdb -load ${xres_file} \
     && Terminal_theme_changer \
     && restart_wm \
-    && xre2rasi \
     && notify-send 'theme changed'
 }
 
