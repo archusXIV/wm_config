@@ -9,7 +9,7 @@ case "$1" in
     ;;
     -h) urxvtc -name htop -e htop -u $USER -s Command
     ;;
-    -j) urxvtc -name jnettop -e sudo jnettop -i enp7s0
+    -j) urxvtc -name jnettop -e sudo jnettop -i enp0s3
     ;;
     -m) urxvtc -name pulsemixer -e pulsemixer
     ;;
