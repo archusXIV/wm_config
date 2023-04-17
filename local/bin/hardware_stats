@@ -3,7 +3,7 @@
 # Hardware utilizations and temperatures displayed in polybar.
 # I had to include mpd stuff not to create another polybar module.
 # Same thing for mpv...
-# Dependencies: polybar FontAwesome.
+# Dependencies: lm_sensors polybar FontAwesome.
 
 WM_NAME=$(wmctrl -m | awk '/Name/{print $2}')
 
