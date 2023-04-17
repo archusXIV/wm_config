@@ -2,7 +2,7 @@
 
 # Author: Barret E (2021) <archus@protonmail.com>
 # https://github.com/archusXIV/dotfiles
-# Dependencies: fzf, pacdiff, reflector, vim, updates-manager.
+# Dependencies: fzf, pacdiff, reflector, vim, updates-manager, yay.
 # https://github.com/archusXIV/dotfiles/blob/main/scripts/various/updates-viewer
 #
 # This script shows a menu to let you choose over severals pacman tools and options.
