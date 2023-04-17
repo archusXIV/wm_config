@@ -1,6 +1,6 @@
 # WM CONFIG
 
-## quickly configure i3, bspwm installed on pure Arch Linux base system via: [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/clone_wm) script.
+## quickly configure i3, bspwm installed on pure Arch Linux base system via: [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_wm) script.
 
 It is made to provide an already configured i3/bspwm 'desktop' just to get you started. Both configurations and associated tools will be installed, meaning if you choose to install i3, bspwm files will be present in ~/.config & ~/.local/bin so you can later on install bspwm package with pacman and vice versa.
 Of course you will have to work a bit to make it yours completely.
@@ -16,7 +16,7 @@ The configuration files and scripts are examples so feel free to edit them to fi
 - feh (as wallpaper setter)
 - polybar a little bit customized.
 - mpd ncmpcpp pulsemixer
-- gnome-keyring polkit-gnome pulseaudio (all running as systemd user services)
+- dunst gnome-keyring polkit-gnome pulseaudio (all running as systemd user services)
 - sxhkd (also used with i3)
 
 ## installation
@@ -27,7 +27,7 @@ First install the Arch base, then the window manager with these command lines.
 curl -sL "https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_desktop" -O
 chmod +x install_desktop && ./install_desktop
 ```
-Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/clone_wm) script that has been downloaded during the installation and placed in your $HOME directory. It is already executable.
+Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_wm) script that has been downloaded during the installation and placed in your $HOME directory. It is already executable.
 ```
 ./clone_wn
 ```
@@ -48,7 +48,7 @@ Geany will open this README.md when you first login so you can check your settin
 - .local/bin/autostart
 
 ## Dmenu scripts launcher
-For user convenience when pressing mod4 + d a dmenu with subcategories will appear at the bottom of the screen. Where you can find an application menu, archwiki finder, autoscript editing function, a menu to open configs, a finder, keyboard shortcuts reminder, power menu, theme selector and a screenshooter.
+For user convenience when pressing mod4 + d a dmenu with subcategories will appear at the bottom of the screen. Where you can find an application menu, archwiki finder, autoscript editing function, a menu to open configs, a finder, keyboard shortcuts reminder, power menu, a screenshooter and a theme selector.
 
 ## mpd configuration
 Just modify its configuration in ~/.config/mpd/mpd.conf according to your likings (music path etc...).
