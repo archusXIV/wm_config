@@ -1,19 +1,6 @@
 #!/bin/bash
 
-declare -a session=(
-"at-spi-dbus-bus" \
-"dbus" \
-"dunst" \
-"gnome-keyring-daemon.service" \
-"polkit-gnome.service" \
-"powerline-daemon.service"
-"gvfs-daemon" \
-"pulseaudio"
-)
-
-for service in "${session[@]}"; do
-    systemctl --user stop "$service"
-done
+systemctl --user stop Xsession.target
 
 rm /tmp/polybar_mqueue.* 2>/dev/null
 sudo rm -f /tmp/serverauth.*
