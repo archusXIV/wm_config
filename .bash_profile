@@ -2,6 +2,7 @@
 # ~/.bash_profile
 #
 
+[[ -f ~/.config/.bash_login ]] && . ~/.config/.bash_login
 [[ -f ~/.bashrc ]] && . ~/.bashrc
 
 # Setting our path
