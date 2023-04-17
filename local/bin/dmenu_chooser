@@ -8,7 +8,7 @@ WM_NAME=$(wmctrl -m | awk '/Name/{print $2}')
 choice=$(printf "apps\\narchwiki\\nautoscript\\nconfig\\nfind\\nkeys\\npower\\nscrot\\nthemes" \
         | dmenu -f -i -b $DMENU_OPTIONS -p 'Select a script:')
 
-[[ -z $choice ]] && _lite && exit
+[[ -z $choice ]] && exit
 
 case "$choice" in
     apps)       dmenu_run -b $DMENU_OPTIONS
