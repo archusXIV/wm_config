@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# Install xdotool, xtitle before using this script
+# yay -S xdotool xtitle
+
 wid="$1"
 title="$(xtitle "$wid")"
 class="$(xdotool search --classname "$wid")"
