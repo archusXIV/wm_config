@@ -1,5 +1,6 @@
 #!/bin/sh
 
+# Change the alsa/pulseaudio volume 
 num="${2:-5}"
 
 if pgrep -x pulseaudio >/dev/null; then
