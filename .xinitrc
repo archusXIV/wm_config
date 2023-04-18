@@ -32,6 +32,7 @@ numlockx on &
 autostart &
 
 # launch the session, commands below these lines will be ignored
+# ONLY APPLIES TO ZSH
 # Starting Xsession depending on tty when multiple wm are installed.
 # If you want to use this way for login, uncomment the case statement,
 # and remove the last line of this file.
