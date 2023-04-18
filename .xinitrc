@@ -21,11 +21,8 @@ systemctl --user start Xsession.target &
 [ -f "$RESOURCES_FILE" ] && xrdb -load "$RESOURCES_FILE"
 
 # more stuff (personal scripts).
-#nvidia-settings -l
 xset s off -dpms
 xset r rate 350 70
-#xset -r 41
-#setxkbmap --option caps:swapescape
 urxvtd -q -o -f &
 numlockx on &
 #pcmanfm -d &
