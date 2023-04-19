@@ -92,14 +92,6 @@ _userland()
 
 # This function sets correct SysV init directories
 #
-_sysvdirs()
-{
-    sysvdirs=( )
-    [[ -d /etc/rc.d/init.d ]] && sysvdirs+=( /etc/rc.d/init.d )
-    [[ -d /etc/init.d ]] && sysvdirs+=( /etc/init.d )
-    # Slackware uses /etc/rc.d
-    [[ -f /etc/slackware-version ]] && sysvdirs=( /etc/rc.d )
-}
 
 # This function checks whether we have a given program on the system.
 #
