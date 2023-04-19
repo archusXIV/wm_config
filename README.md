@@ -2,7 +2,7 @@
 
 ## youtube video (french spoken):
 - https://www.youtube.com/watch?v=CrvrW3EWchk
-## quickly configure i3, bspwm installed on pure Arch Linux base system via: [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_wm) script.
+## quickly configure i3, bspwm installed on pure Arch Linux base system via: [install_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_wm) script.
 
 It is made to provide an already configured i3/bspwm 'desktop' just to get you started. Both configurations and associated tools will be installed, meaning if you choose to install i3, bspwm files will be present in ~/.config & ~/.local/bin so you can later on install bspwm package with pacman and vice versa.
 Of course you will have to work a bit to make it yours completely.
@@ -32,7 +32,7 @@ chmod +x install_desktop && ./install_desktop
 ```
 Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_wm) script that has been downloaded during the installation and placed in your $HOME directory. It is already executable.
 ```
-./clone_wn
+./install_wn
 ```
 ## First run
 Geany will open this README.md when you first login so you can check your settings such as:
