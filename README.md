@@ -30,7 +30,7 @@ First install the Arch base, then the window manager with these command lines.
 curl -sL "https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_desktop" -O
 chmod +x install_desktop && ./install_desktop
 ```
-Once rebooted run the [clone_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_wm) script that has been downloaded during the installation and placed in your $HOME directory. It is already executable.
+Once rebooted run the [install_wm](https://raw.githubusercontent.com/archusXIV/dotfiles/main/scripts/install_arch/install_wm) script that has been downloaded during the installation and placed in your $HOME directory. It is already executable.
 ```
 ./install_wn
 ```
