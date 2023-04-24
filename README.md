@@ -17,7 +17,7 @@ The configuration files and scripts are examples so feel free to edit them to fi
 - a lot of Xresources themes (~/.config/xfiles/themes using theme_selector script)
 - feh (as wallpaper setter)
 - polybar a little bit customized.
-- mpd ncmpcpp pulsemixer
+- cmus mpd ncmpcpp pulsemixer
 - dunst gnome-keyring polkit-gnome pulseaudio (all running as systemd user services)
 - sxhkd (also used with i3)
 - Recommanded tools to install: yay, firefox (set as default $BROWSER), xdotool & xtitle (aur)
