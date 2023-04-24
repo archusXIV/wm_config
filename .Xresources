@@ -1,6 +1,6 @@
 ! Customized by archusXIV
 
-#include ".config/xfiles/themes/jellybeans"
+#include ".config/xfiles/themes/embers-dark"
 #include ".config/xfiles/colors"
 #include ".config/xfiles/menus"
 #include ".config/xfiles/urxvt"
