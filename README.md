@@ -23,7 +23,7 @@ The configuration files and scripts are examples so feel free to edit them to fi
 - Recommanded tools to install: yay, firefox (set as default $BROWSER), xdotool & xtitle (aur)
 
 ## installation
-BE CAREFULL, don't launch clone_wm on a none fresh installed system!!!
+BE CAREFULL, don't launch install_wm on a none fresh installed system!!!
 
 First install the Arch base, then the window manager with these command lines.
 ```
