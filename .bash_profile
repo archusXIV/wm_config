@@ -2,8 +2,8 @@
 # ~/.bash_profile
 #
 
-[[ -f ~/.config/.bash_login ]] && . ~/.config/.bash_login
 [[ -f ~/.bashrc ]] && . ~/.bashrc
+[[ $(ps -e | grep startx) = '' ]] && startx
 
 # Setting our path
 [[ -d "$HOME"/.local/bin ]] && PATH="$HOME/.local/bin:$PATH"
