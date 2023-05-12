@@ -3,7 +3,12 @@
 # Screen
 # Change the screen resolution according to your monitor settings.
 xrandr -s 1920x1080 &
-[[ -f $HOME/.fehbg ]] && sh -c "$HOME"/.fehbg &
+
+if [[ -n $(command -v nitrogen) ]]; then
+    nitrogen --restore &
+else
+    [[ -f $HOME/.fehbg ]] && sh -c "$HOME"/.fehbg &
+fi
 
 # Sound
 DEFAULT_SINK=$(pactl get-default-sink)
