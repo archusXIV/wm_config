@@ -26,4 +26,4 @@ esac
 # mpv-playlists-manager
 [[ -z "$class" && "$title" = 'mpm' ]] \
     && echo "state=floating"  \
-    "rectangle=1200x735+2251+243"
+    "rectangle=1260x738+2251+243"
